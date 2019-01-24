@@ -1,51 +1,66 @@
-/* CircularStd @font-face kit */
 @font-face {
-  font-family: 'CircularStd';
-  src: url('../fonts/CircularStd-Book.eot');
-  src: url('../fonts/CircularStd-Book.eot?#iefix') format('embedded-opentype'),
-  url('../fonts/CircularStd-Book.woff') format('woff'),
-  url('../fonts/CircularStd-Book.ttf') format('truetype'),
-  url('../fonts/CircularStd-Book.svg#bcc26993292869431e54c666aafa8fcd') format('svg');
-  font-weight: 400;
+  font-family: 'icomoon';
+  src:  url('../fonts/icomoon.eot?8nf0wv');
+  src:  url('../fonts/icomoon.eot?8nf0wv#iefix') format('embedded-opentype'),
+  url('../fonts/icomoon.ttf?8nf0wv') format('truetype'),
+  url('../fonts/icomoon.woff?8nf0wv') format('woff'),
+  url('../fonts/icomoon.svg?8nf0wv#icomoon') format('svg');
+  font-weight: normal;
   font-style: normal;
 }
-@font-face {
-  font-family: 'CircularStd';
-  src: url('../fonts/CircularStd-BookItalic.eot');
-  src: url('../fonts/CircularStd-BookItalic.eot?#iefix') format('embedded-opentype'),
-  url('../fonts/CircularStd-BookItalic.woff') format('woff'),
-  url('../fonts/CircularStd-BookItalic.ttf') format('truetype'),
-  url('../fonts/CircularStd-BookItalic.svg#bcc26993292869431e54c666aafa8fcd') format('svg');
-  font-weight: 400;
-  font-style: italic;
-}
-@font-face {
-  font-family: 'CircularStd';
-  src: url('../fonts/CircularStd-Medium.eot');
-  src: url('../fonts/CircularStd-Medium.eot?#iefix') format('embedded-opentype'),
-  url('../fonts/CircularStd-Medium.woff') format('woff'),
-  url('../fonts/CircularStd-Medium.ttf') format('truetype'),
-  url('../fonts/CircularStd-Medium.svg#bcc26993292869431e54c666aafa8fcd') format('svg');
-  font-weight: 500;
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
   font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
-@font-face {
-  font-family: 'CircularStd';
-  src: url('../fonts/CircularStd-Bold.eot');
-  src: url('../fonts/CircularStd-Bold.eot?#iefix') format('embedded-opentype'),
-  url('../fonts/CircularStd-Bold.woff') format('woff'),
-  url('../fonts/CircularStd-Bold.ttf') format('truetype'),
-  url('../fonts/CircularStd-Bold.svg#bcc26993292869431e54c666aafa8fcd') format('svg');
-  font-weight: 600;
-  font-style: normal;
+
+.icon-blog:before {
+  content: "\e909";
 }
-@font-face {
-  font-family: 'CircularStd';
-  src: url('../fonts/CircularStd-Black.eot');
-  src: url('../fonts/CircularStd-Black.eot?#iefix') format('embedded-opentype'),
-  url('../fonts/CircularStd-Black.woff') format('woff'),
-  url('../fonts/CircularStd-Black.ttf') format('truetype'),
-  url('../fonts/CircularStd-Black.svg#bcc26993292869431e54c666aafa8fcd') format('svg');
-  font-weight: 800;
-  font-style: normal;
+.icon-conference:before {
+  content: "\e90a";
 }
+.icon-podcast:before {
+  content: "\e90b";
+}
+.icon-long-arrow:before {
+  content: "\e908";
+}
+.icon-search:before {
+  content: "\e907";
+}
+.icon-facebook:before {
+  content: "\e904";
+}
+.icon-arrow:before {
+  content: "\e905";
+}
+.icon-twitter:before {
+  content: "\e906";
+}
+.icon-guard:before {
+  content: "\e900";
+}
+.icon-print:before {
+  content: "\e901";
+}
+.icon-marker:before {
+  content: "\e902";
+}
+.icon-phone:before {
+  content: "\e903";
+}
+
+
+
+

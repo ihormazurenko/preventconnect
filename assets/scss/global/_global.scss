@@ -2,7 +2,7 @@
 /*------------------------------RESET DEFAULT STYLES--------------------------------*/
 /*----------------------------------------------------------------------------------*/
 html,body                       { width:100%; height:100%; }
-body                            { padding:0; margin:0; @include font(); background: $white; color: $color-text;
+body                            { padding:0; margin:0; @include font(); background: $color-bg; color: $color-text;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -68,6 +68,7 @@ img {
   margin: 0 auto;
   padding: 0 20px;
 }
+
 .vertical-align {
   .container {
     display: table;
@@ -85,12 +86,15 @@ img {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-weight: $normal;
+  //font-weight: $normal;
 }
 
 .content {
-  font-size: 20px;
+  font-size: $size-small;
   line-height: $line-height;
+  //letter-spacing: -.01em;
+  word-spacing: .02em;
+  color: $color-text2;
   * {
     margin-bottom: 15px; 
     &:last-child {
@@ -108,7 +112,7 @@ h1, h2, h3, h4, h5, h6 {
   h5 { font-size: 22px; }
   h6 { font-size: 20px; }
   a {
-    color: $color-text3;
+    //color: $color-text3;
     text-decoration: underline;
     &:hover {
       opacity: 0.7;
@@ -203,82 +207,6 @@ h1, h2, h3, h4, h5, h6 {
       }
     }
   }
-  &.small {
-    * {
-      margin-bottom: 10px;
-    }
-    font-size: 16px;
-    h1 { font-size: (55px) * 0.8; }
-    h2 { font-size: (45px) * 0.8; }
-    h3 { font-size: (35px) * 0.8; }
-    h4 { font-size: (25px) * 0.8; }
-    h5 { font-size: (22px) * 0.8; }
-    h6 { font-size: (20px) * 0.8; }
-    ul {
-      > li {
-        padding-left: 20px;
-        margin-bottom: 1px;
-        &:before {
-          width: 4px;
-          height: 4px;
-          margin-top: 9px;
-          margin-right: 9px;
-        }
-      }
-    }
-    ol {
-      > li {
-        margin-bottom: 1px;
-        padding-left: 25px;
-      }
-    }
-  }
-  &.big {
-    font-size: 22px;
-    h1 { font-size: (55px) * 1.2; }
-    h2 { font-size: (45px) * 1.2; }
-    h3 { font-size: (35px) * 1.2; }
-    h4 { font-size: (25px) * 1.2; }
-    h5 { font-size: (22px) * 1.2; }
-    h6 { font-size: (20px) * 1.2; }
-    ul {
-      > li {
-        &:before {
-          width: 6px;
-          height: 6px;
-          margin-top: 13px;
-          margin-right: 13px;
-        }
-      }
-    }
-  }
-  &.biggest {
-    font-size: 30px;
-    h1 { font-size: (55px) * 1.6; }
-    h2 { font-size: (45px) * 1.6; }
-    h3 { font-size: (35px) * 1.6; }
-    h4 { font-size: (25px) * 1.6; }
-    h5 { font-size: (22px) * 1.6; }
-    h6 { font-size: (20px) * 1.6; }
-    ol {
-      > li {
-        padding-left: 40px;
-        &:before {
-
-        }
-      }
-    }
-    ul {
-      > li {
-        &:before {
-          width: 8px;
-          height: 8px;
-          margin-top: 18px;
-          margin-right: 18px;
-        }
-      }
-    }
-  }
 
   .align-center & {
     text-align: center;
@@ -311,6 +239,9 @@ h1, h2, h3, h4, h5, h6 {
       font-size: 22px;
     }
   }
+  &.big {
+    font-size: $size-main;
+  }
 }
 .warning {
   color: red;
@@ -323,12 +254,7 @@ h1, h2, h3, h4, h5, h6 {
   position: relative;
 }
 #main-content {
-  .white-header-bg & {
-    padding-top: 132px;
-  }
-  @media all and (max-width: 1024px) {
-    padding-top: 70px;
-  }
+  padding-top: 130px;
 }
 
 // Video Wrapper

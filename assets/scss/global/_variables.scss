@@ -1,26 +1,27 @@
 /*fonts*/
-$font-main: 'CircularStd', Arial, sans-serif;
-$font-roboto: 'Roboto', Arial, sans-serif;
+//<link href="https://fonts.googleapis.com/css?family=Lato:400,700,900|Poppins:400,500,600,700" rel="stylesheet">
+$font-main: 'Lato', Arial, sans-serif;
+$font-poppins: 'Poppins', 'Lato', Arial, sans-serif;
 
 /*fonts-weight*/
 $normal: 400;
 $medium: 500;
-$bold: 600;
-$black-weight: 800;
+$semi-bold: 600;
+$bold: 700;
+$extra-bold: 800;
+$black-weight: 900;
 
 /*fonts-size*/
-$size-smaller: 16px;
-$size-small: 17px;
-$size-main: 18px;
-$size-big: 24px;
-$size-hero-heading: 118px;
-$size-heading1: 70px;
-$size-heading2: 40px;
-//$size-heading2: 40px;
-//$size-heading3: 28px;
+$size-small: 14px;
+$size-main: 16px;
+$size-big: 18px;
+$size-heading1: 40px;
+$size-heading2: 36px;
+$size-heading3: 28px;
+$size-heading4: 20px;
 
 /*line-height*/
-$line-height: 1.6;
+$line-height: 1.7;
 $line-height-heading: 1.2;
 
 $letter-spacing-250: 0.25em;
@@ -29,35 +30,43 @@ $letter-spacing-20: 0.02em;
 /*colors*/
 $white: #ffffff;
 $black: #000000;
-$color-text: #3e3e3e;
-$color-text2: #ffc72c;
-$color-text3: #212020;
-$color-text4: #0033a0;
-$color-text5: #989898;
-$color-text6: #fc4c02;
-$color-text7: #ff3f3f;
-$color-text8: #0e90ff;
-$color-text9: #f7f9fb;
-$color-text10: #00f0dc;
-$color-text11: #62666a;
-$color-text12: #00a3e0;
+$color-text: #3C3C47;
+$color-text2: #686882;
+$color-blue: #1482C8;
+$color-green: #ACCB20;
+$color-light-grey: #EBF1F5;
+$color-light-grey2: #9FABB7;
+//
+//$color-text5: #C5E33D;
+//$color-text6: #B9D732;
+//$color-text7: #EBF1F5;
+//$color-text5: #989898;
+//$color-text6: #fc4c02;
+//$color-text7: #ff3f3f;
+//$color-text8: #0e90ff;
+//$color-text9: #f7f9fb;
+//$color-text10: #00f0dc;
+//$color-text11: #62666a;
+//$color-text12: #00a3e0;
 //$color-text2: #313b43;
 //$color-text3: #ff614c;
-$color-bg: #3e3e3e;
-$color-bg2: #ffc72c;
-$color-bg3: #212020;
-$color-bg4: #0033a0;
-$color-bg5: #989898;
-$color-bg6: #fc4c02;
-$color-bg7: #ff3f3f;
-$color-bg8: #0e90ff;
-$color-bg9: #f7f9fb;
-$color-bg10: #00f0dc;
-$color-bg11: #62666a;
-$color-bg12: #00a3e0;
-$light-blue: $color-bg12;
+
+$color-bg: #F7F9FC;
+$color-bg-green: #C5E33D;
+//$color-bg2: $color-text2;
+//$color-bg3: #212020;
+//$color-bg4: #0033a0;
+//$color-bg5: #989898;
+//$color-bg6: #fc4c02;
+//$color-bg7: #ff3f3f;
+//$color-bg8: #0e90ff;
+//$color-bg9: #f7f9fb;
+//$color-bg10: #00f0dc;
+//$color-bg11: #62666a;
+//$color-bg12: #00a3e0;
+//$light-blue: $color-bg12;
 //$color-bg3: #1d4d94;
-$color-bg14: #d5d5d5;
+//$color-bg14: #d5d5d5;
 
 /*transition*/
 $transition-link: .25s;
@@ -65,7 +74,7 @@ $transition-other: .35s;
 
 /*border-radius*/
 $radius-main: 10px;
-$radius-small: 5px;
+$radius-small: 3px;
 
 
 //grid columns
