@@ -252,7 +252,66 @@ h1, h2, h3, h4, h5, h6 {
 .wrapper {
   overflow: hidden;
   position: relative;
+
 }
+.double-bg,
+.bg-wrap {
+  position: absolute;
+  display: block;
+  content: '';
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  &:before {
+    position: absolute;
+    display: block;
+    content: '';
+    left: 50%;
+    top: 420px;
+    height: 740px;
+    width: 0;
+    border-top: 314px solid transparent;
+    border-bottom: 314px solid transparent;
+    border-right: 2560px solid #EAF1F4;
+    @include translate(-50%, 0);
+    .left-trapezium & {
+      top: 2420px;
+    }
+  }
+  &:after {
+    position: absolute;
+    display: block;
+    content: '';
+    left: 50%;
+    top: 2420px;
+    height: 740px;
+    width: 0;
+    border-top: 314px solid transparent;
+    border-bottom: 314px solid transparent;
+    border-left: 2560px solid #EAF1F4;
+    @include translate(-50%, 0);
+    .left-trapezium & {
+      top: 420px;
+    }
+  }
+}
+
+.double-bg {
+  &:before {
+    top: 4420px;
+    .left-trapezium & {
+      top: 6420px;
+    }
+  }
+  &:after {
+    top: 6420px;
+    .left-trapezium & {
+      top: 4420px;
+    }
+  }
+}
+
 #main-content {
   padding-top: 130px;
 }
