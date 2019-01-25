@@ -258,6 +258,7 @@ h1, h2, h3, h4, h5, h6 {
 .bg-wrap {
   position: absolute;
   display: block;
+  z-index: -1;
   content: '';
   top: 0;
   left: 0;
@@ -276,7 +277,14 @@ h1, h2, h3, h4, h5, h6 {
     border-right: 2560px solid #EAF1F4;
     @include translate(-50%, 0);
     .left-trapezium & {
+      //top: 2620px;
       top: 2420px;
+      //&.home {
+      //  top: 2420px;
+      //}
+    }
+    .web-conference & {
+      top: 620px;
     }
   }
   &:after {
@@ -292,14 +300,23 @@ h1, h2, h3, h4, h5, h6 {
     border-left: 2560px solid #EAF1F4;
     @include translate(-50%, 0);
     .left-trapezium & {
+      //top: 620px;
       top: 420px;
+      //&.home {
+      //  top: 420px;
+      //}
+    }
+    .web-conference & {
+      top: 2620px;
     }
   }
 }
+
 .bg-wrap {
   .bg-icon {
     overflow: hidden;
     position: absolute;
+    z-index: 2;
     &.icon-home_abstract_1 {
       top: 47px;
       //right: 230px;
@@ -330,6 +347,37 @@ h1, h2, h3, h4, h5, h6 {
       right: 155px;
       font-size: 202px;
     }
+
+    &.icon-abstract_1 {
+      top: 47px;
+      //right: 230px;
+      right: 0;
+      font-size: 192px;
+    }
+    &.icon-abstract_2 {
+      top: 391px;
+      //left: 232px;
+      left: 0;
+      font-size: 313px;
+    }
+    &.icon-abstract_3 {
+      top: 896px;
+      //right: 230px;
+      right: 0;
+      font-size: 336px;
+    }
+    &.icon-abstract_4 {
+      top: 1560px;
+      //left: 234px;
+      left: 0;
+      font-size: 283px;
+    }
+    &.icon-abstract_5 {
+      top: 1806px;
+      //right: 231px;
+      right: 0;
+      font-size: 271px;
+    }
   }
 }
 
@@ -338,18 +386,34 @@ h1, h2, h3, h4, h5, h6 {
   &:before {
     top: 4420px;
     .left-trapezium & {
+      //top: 6620px;
       top: 6420px;
+      //&.home {
+      //  top: 6420px;
+      //}
+    }
+    .web-conference & {
+      top: 4620px;
     }
   }
   &:after {
     top: 6420px;
     .left-trapezium & {
+      //top: 4620px;
       top: 4420px;
+      //&.home {
+      //  top: 4420px;
+      //}
+    }
+    .web-conference & {
+      top: 6620px;
     }
   }
 }
 
 #main-content {
+  position: relative;
+  z-index: 1;
   padding-top: 130px;
 }
 
