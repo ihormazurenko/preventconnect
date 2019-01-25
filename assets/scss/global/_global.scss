@@ -296,6 +296,43 @@ h1, h2, h3, h4, h5, h6 {
     }
   }
 }
+.bg-wrap {
+  .bg-icon {
+    overflow: hidden;
+    position: absolute;
+    &.icon-home_abstract_1 {
+      top: 47px;
+      //right: 230px;
+      right: 0;
+      font-size: 192px;
+    }
+    &.icon-home_abstract_2 {
+      top: 502px;
+      //left: 232px;
+      left: 0;
+      font-size: 303px;
+    }
+    &.icon-home_abstract_3 {
+      top: 1166px;
+      //right: 230px;
+      right: 0;
+      font-size: 336px;
+    }
+    &.icon-home_abstract_4 {
+      top: 1604px;
+      //left: 235px;
+      left: 0;
+      font-size: 283px;
+    }
+    &.icon-home_abstract_5 {
+      top: 1835px;
+      //right: 391px;
+      right: 155px;
+      font-size: 202px;
+    }
+  }
+}
+
 
 .double-bg {
   &:before {
