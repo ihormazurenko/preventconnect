@@ -114,9 +114,11 @@ h1, h2, h3, h4, h5, h6 {
   a {
     //color: $color-text3;
     text-decoration: underline;
-    &:hover {
-      opacity: 0.7;
-      text-decoration: none;
+    @media all and (min-width: 769px) {
+      &:hover,
+      &:focus {
+        color: $color-blue;
+      }
     }
   }
   ul {
@@ -168,7 +170,7 @@ h1, h2, h3, h4, h5, h6 {
     margin-right: auto;
     padding-left: 10px;
     text-align: left;
-    border-left: 2px solid #0b0b0b;
+    border-left: 2px solid $color-blue;
   }
   img {
     max-width: 100%;

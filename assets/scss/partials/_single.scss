@@ -1,12 +1,15 @@
-//.section-content {
-//	background-color: #f7f9fb;
-//	.container {
-//		max-width: 860px;
-//	}
-//	.white-header-bg & {
-//		padding-top: 80px;
-//	}
-//	.section-title {
-//		margin-bottom: 42px;
-//	}
-//}
+.section-content {
+  padding: 50px 0 100px;
+	.container {
+		max-width: 860px;
+	}
+  .content {
+    background-color: white;
+    padding: 50px 60px 80px;
+    @include box-shadow(0 12px 40px 0, rgba(17, 57, 91, .08));
+  }
+  .section-title,
+  .section-title.small {
+    margin-bottom: 50px;
+  }
+}
