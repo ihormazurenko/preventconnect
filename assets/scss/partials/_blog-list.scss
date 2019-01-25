@@ -117,8 +117,9 @@
 .section-top-post {
   overflow: hidden;
   padding: 50px 0 50px;
-  & + .section-blog {}
-  padding-top: 20px;
+  & + .section-blog {
+    padding-top: 20px;
+  }
 }
   .top-post-box {
     max-width: 772px;
