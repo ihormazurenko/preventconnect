@@ -173,6 +173,7 @@
         .right-box .card-btn-box,
         .card-btn-box {
           a {
+            margin-right: 66px;
             font-weight: $black-weight;
             font-size: 12px;
             text-decoration: none;
@@ -189,6 +190,9 @@
                 color: $color-green;
               }
             }
+          }
+          &:last-child {
+            margin-right: 0;
           }
         }
 

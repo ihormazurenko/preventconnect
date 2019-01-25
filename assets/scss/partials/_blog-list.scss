@@ -1,10 +1,14 @@
 .section-blog {
   padding: 50px 0 100px;
-  .container {}
+  .container {
+    > :last-child {
+      //margin-bottom: 0;
+    }
+  }
 }
     .blog-list {
       max-width: 970px;
-      margin: 0 auto;
+      margin: 0 auto 40px;
       > li {
         margin-bottom: 60px;
         &:last-child {
@@ -110,3 +114,63 @@
               }
             }
           }
+.section-top-post {
+  overflow: hidden;
+  padding: 50px 0 50px;
+  & + .section-blog {}
+  padding-top: 20px;
+}
+  .top-post-box {
+    max-width: 772px;
+    margin: 0 auto;
+    .top-box {
+      position: relative;
+      z-index: 5;
+      width: 87%;
+      img {
+        overflow: hidden;
+        display: block;
+        max-width: 100%;
+        height: auto;
+        width: 100%;
+        @include border-radius($radius-small);
+      }
+      & + .bottom-box {
+        margin-top: -212px;
+      }
+    }
+    .bottom-box {
+      position: relative;
+      z-index: 3;
+      float: right;
+      width: 87%;
+      padding: 260px 54px 40px 62px;
+      background-color: $white;
+      @include border-radius($radius-small);
+      @include box-shadow(0 12px 40px 0, rgba(17, 57, 91, .08));
+      > :last-child {
+        margin-bottom: 0;
+      }
+    }
+    .section-title-box + & {
+      margin-top: -30px;
+    }
+    .card-btn-box {
+      text-align: right;
+    }
+    .content {
+      margin-bottom: 16px;
+      margin-right: 60px;
+    }
+  }
+    .box-title {
+      display: block;
+      margin-bottom: 24px;
+      font-family: $font-poppins;
+      font-size: $size-heading3;
+      font-weight: $medium;
+      line-height: $line-height-heading;
+      color: $color-text;
+      text-align: center;
+      text-transform: uppercase;
+    }

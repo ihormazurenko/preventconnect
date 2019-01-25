@@ -151,6 +151,10 @@
               }
             }
           }
+          &.current-menu-item {
+            a {}
+            color: $color-blue;
+          }
         }
       }
 
