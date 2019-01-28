@@ -15,6 +15,11 @@
           margin-bottom: 0;
         }
       }
+      @media all and (max-width: 420px) {
+        > li {
+          margin-bottom: 20px;
+        }
+      }
     }
         .blog-box {
           position: relative;
@@ -69,7 +74,70 @@
           .content {
             margin-bottom: 10px;
           }
+          @media all and (max-width: 860px) {
+            .left-box {
+              //padding-right: 15px;
+              width: 42%;
+            }
+            .right-box {
+              width: 58%;
+            }
+          }
+          @media all and (max-width: 767px) {
+            padding: 30px 0;
+            &:after {
+              left: 40px;
+            }
+            .left-box {
+              width: 40%;
+              padding-right: 15px;
+            }
+            .right-box {
+              width: 60%;
+              padding-left: 15px;
+              padding-right: 30px;
+            }
+          }
+          @media all and (max-width: 580px) {
+            //padding: 30px 0;
+            &:after {
+              //left: 40px;
+              left: 20px;
+            }
+            .left-box {
+              width: 50%;
+              //width: 40%;
+              //padding-right: 15px;
+            }
+            .right-box {
+              width: 100%;
+              padding-top: 30px;
+              padding-left: 40px;
+              padding-right: 20px;
+              //width: 60%;
+              //padding-left: 15px;
+              //padding-right: 30px;
+            }
+          }
+          @media all and (max-width: 420px) {
+            padding-top: 0;
+            padding-bottom: 20px;
+            &:after {
+              left: 0;
+            }
+            .left-box {
+              width: 100%;
+              padding-right: 0;
+              padding-left: 0;
+            }
+            .right-box {
+              padding-top: 20px;
+              padding-left: 20px;
+              padding-right: 20px;
+            }
+          }
         }
+
           .blog-content-box {
             min-height: 134px;
           }
@@ -105,6 +173,12 @@
             word-spacing: .02em;
             text-decoration: none;
             text-transform: capitalize;
+            @media all and (max-width: 1024px) {
+              font-size: 18px;
+            }
+            @media all and (max-width: 767px) {
+              font-size: 16px;
+            }
           }
           a.blog-title {
             @media all and (min-width: 769px) {
@@ -155,6 +229,12 @@
     }
     .section-title-box + & {
       margin-top: -30px;
+      @media all and (max-width: 1024px) {
+        margin-top: -20px;
+      }
+      @media all and (max-width: 767px) {
+        margin-top: -10px;
+      }
     }
     .card-btn-box {
       text-align: right;
@@ -162,6 +242,43 @@
     .content {
       margin-bottom: 16px;
       margin-right: 60px;
+    }
+    @media all and (max-width: 767px) {
+      max-width: 480px;
+      //margin-bottom: 16px;
+      //font-size: 16px;
+      .top-box {
+        width: 100%;
+        padding-right: 20px;
+        & + .bottom-box {
+          float: none;
+          width: -webkit-calc(100% - #{20px});
+          width: calc(100% - #{20px});
+          margin-top: -100px;
+          margin-left: 20px;
+        }
+      }
+      .bottom-box {
+        width: 95%;
+        //margin-top: -100px;
+        padding: 130px 30px 30px 30px;
+      }
+    }
+
+    @media all and (max-width: 420px) {
+      .top-box {
+        width: 100%;
+        padding: 0;
+        & + .bottom-box {
+         width: 100%;
+          margin: 0;
+        }
+      }
+      .bottom-box {
+        width: 100%;
+        //margin-top: -100px;
+        padding: 20px 20px;
+      }
     }
   }
     .box-title {
@@ -174,4 +291,10 @@
       color: $color-text;
       text-align: center;
       text-transform: uppercase;
+      @media all and (max-width: 1024px) {
+        font-size: 24px;
+      }
+      @media all and (max-width: 767px) {
+        font-size: 20px;
+      }
     }

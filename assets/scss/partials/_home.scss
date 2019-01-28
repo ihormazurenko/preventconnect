@@ -31,12 +31,36 @@
         margin-bottom: 60px;
         font-size: $size-heading2;
       }
+      @media all and (max-width: 1024px) {
+        font-size: 36px;
+        &.small {
+          margin-bottom: 50px;
+          font-size: 32px;
+        }
+      }
+      @media all and (max-width: 767px) {
+        font-size: 32px;
+        &.small {
+          margin-bottom: 40px;
+          font-size: 28px;
+        }
+      }
     }
     .section-desc {
       max-width: 770px;
       margin: 0 auto 47px;
       .section-title-box + & {
         margin-top: -32px;
+      }
+      @media all and (max-width: 1024px) {
+        .section-title-box + & {
+          margin-top: -22px;
+        }
+      }
+      @media all and (max-width: 767px) {
+        .section-title-box + & {
+          margin-top: -12px;
+        }
       }
     }
   .home-card-list {
@@ -78,6 +102,9 @@
         //margin-left: -159px;
         .right & {
           margin-bottom: -2px;
+          @media all and (max-width: 767px) {
+            margin-bottom: 20px;
+          }
         }
       }
       a.btn-circle,
@@ -100,6 +127,38 @@
           bottom: -9px;
           @include translate(-50%, 50%);
 
+        }
+      }
+      @media all and (max-width: 1024px) {
+        &:after {
+          left: 50px;
+          right: 50px;
+        }
+        a.btn-circle,
+        .btn-circle {
+          //right: 0px;
+          bottom: -70px;
+        }
+        .right & {
+
+        }
+      }
+      @media all and (max-width: 767px) {
+        &:after {
+          left: 20px;
+          right: 20px;
+        }
+        .section-title {
+          margin-bottom: 20px;
+        }
+      }
+      @media all and (max-width: 420px) {
+        &:after {
+          left: 0;
+          right: 0;
+        }
+        .section-title {
+          margin-left: 20px;
         }
       }
     }
@@ -149,6 +208,76 @@
           margin-bottom: 24px;
           //max-width: 440px;
         }
+        @media all and (max-width: 1024px) {
+          //&:after {
+          //  left: 50px;
+          //  right: 50px;
+          //}
+          .left-box {
+            padding-right: 15px;
+            .right & {
+              width: 40.7%;
+              padding-left: 15px;
+            }
+          }
+          .right-box {
+            padding-left: 15px;
+            padding-right: 100px;
+            .right & {
+              width: 59.3%;
+              padding-left: 100px;
+              padding-right: 15px;
+            }
+          }
+        }
+        @media all and (max-width: 767px) {
+          .left-box {
+            width: 100%;
+            padding-right: 60px;
+            .right & {
+              width: 100%;
+              padding-left: 60px;
+            }
+          }
+          .right-box {
+            width: 100%;
+            padding-top: 40px;
+            padding-left: 60px;
+            padding-right: 60px;
+            .right & {
+              width: 100%;
+              padding-left: 60px;
+              padding-right: 60px;
+            }
+          }
+        }
+        @media all and (max-width: 420px) {
+          .left-box {
+            //width: 100%;
+            //padding-right: 60px;
+            padding-left: 20px;
+            padding-right: 20px;
+            .right & {
+              //width: 100%;
+              padding-left: 20px;
+              padding-right: 20px;
+            }
+          }
+          .right-box {
+            //width: 100%;
+            padding-top: 20px;
+            padding-left: 20px;
+            padding-right: 20px;
+            .right & {
+              padding-top: 20px;
+              padding-left: 20px;
+              padding-right: 20px;
+            }
+          }
+          .content {
+            margin-bottom: 12px;
+          }
+        }
       }
         .card-img-wrap {
           //margin-left: -160px;
@@ -169,10 +298,21 @@
           text-transform: capitalize;
           word-spacing: .12em;
           letter-spacing: -.01em;
+          @media all and (max-width: 1024px) {
+            font-size: 17px;
+          }
+          @media all and (max-width: 767px) {
+            //margin-bottom: 16px;
+            font-size: 16px;
+          }
+          @media all and (max-width: 420px) {
+            margin-bottom: 12px;
+          }
         }
         .right-box .card-btn-box,
         .card-btn-box {
           a {
+            display: inline-block;
             margin-right: 66px;
             font-weight: $black-weight;
             font-size: 12px;
@@ -208,7 +348,27 @@
       position: absolute;
       z-index: 7;
       top: 90px;
+      //bottom: 205px;
       right: 0;
+      //@media all and (max-width: 860px) {
+      //  top: auto;
+      //  bottom: 100px;
+      //}
+    }
+    @media all and (max-width: 640px) {
+      max-width: 420px;
+      margin: 0 auto;
+      a.btn-circle,
+      .btn-circle {
+        top: auto;
+        bottom: 140px;
+      }
+    }
+    @media all and (max-width: 420px) {
+      a.btn-circle,
+      .btn-circle {
+        bottom: -20px;
+      }
     }
   }
     .home-blog-list {
@@ -245,8 +405,27 @@
           }
         }
       }
+      @media all and (max-width: 860px) {
+        margin: 0 -9px -20px;
+        padding-right: 80px;
+        > li {
+          width: 49%;
+          width: -webkit-calc(50% - #{4px});
+          width: calc(50% - #{4px});
+          margin-bottom: 20px;
+          padding: 0 9px;
+        }
+      }
+      @media all and (max-width: 640px) {
+        > li {
+          width: 100%;
+        }
+      }
+      @media all and (max-width: 420px) {
+        padding-right: 0;
+        padding-bottom: 100px;
+      }
     }
-
       .centered-img {
         overflow: hidden;
         position: relative;
@@ -284,6 +463,9 @@
       }
         .home-blog-detail {
           padding: 34px 40px 32px;
+          @media all and (max-width: 860px) {
+            padding: 26px 20px 24px;
+          }
         }
         .home-blog-title {
           overflow: hidden;
@@ -294,5 +476,11 @@
           line-height: 1.5;
           word-spacing: .1em;
           text-transform: capitalize;
-
+          @media all and (max-width: 767px) {
+            height: 65px;
+            font-size: 15px;
+          }
+          @media all and (max-width: 640px) {
+            height: auto;
+          }
         }

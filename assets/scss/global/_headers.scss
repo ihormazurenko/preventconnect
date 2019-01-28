@@ -74,6 +74,12 @@
     //min-height: 70px !important;
     //padding: 8px 0 3px !important;
     //text-align: left;
+    min-height: 60px;
+    padding: 18px 0 12px;
+    .top-box .right-box,
+    .bottom-box {
+      display: none;
+    }
   }
 }
 
@@ -86,21 +92,23 @@
 }
 
 #header-scrolling {
-  display: none;
-  //position: fixed;
-  //z-index: 1010;
-  //top: -82px;
+  //display: none;
+  position: fixed;
+  z-index: 1010;
+  top: -140px;
   //min-height: 82px;
   //padding-top: 11px;
   //padding-bottom: 11px;
-  //background-color: $white;
-  //.direction-up & {
-  //  top: 0;
-  //  @include box-shadow(0 5px 10px 0, rgba($black, .2));
-  //}
-  //.direction-down & {
-  //  top: -82px;
-  //}
+  background-color: $white;
+  box-shadow: none;
+  .direction-up & {
+    top: 0;
+    @include box-shadow(0 12px 40px 0, rgba(17, 57, 91, .08));
+  }
+  .direction-down & {
+    top: -140px;
+  }
+
   //.home.overflow.direction-down &,
   //.overflow.direction-down & {
   //  top: 0;
@@ -167,13 +175,17 @@
   //@media all and (max-width: 1024px) {
   //  max-width: 158px;
   //}
-}
-
-.home #header-scrolling {
-  .logo {
-    margin-left: 0;
+  @media all and (max-width: 1024px) {
+    margin-top: 0;
+    max-width: 180px;
   }
 }
+
+//.home #header-scrolling {
+//  .logo {
+//    margin-left: 0;
+//  }
+//}
 
 
 .social-box {
@@ -225,13 +237,14 @@
 .mobile-menu-toggle {
   display: none;
 }
+
 .mobile-menu-wrap {
   position: fixed;
   z-index: 99999;
   right: 0;
   height: 0;
   width: 0;
-  top: 70px;
+  top: 60px;
   @include css3-prefix('transition-delay',$transition-other);
   .admin-bar & {
     top: 108px;
@@ -265,7 +278,7 @@
   right: -100%;
   z-index: 2;
   padding-bottom: 100px;
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: $white;
   @include transition(right $transition-other);
   overflow: auto;
   @include box-shadow(-10px 10px 30px, rgba($black, .2));
@@ -277,9 +290,9 @@
 .mobile-menu-toggle {
   position: absolute;
   right: 0;
-  top: -8px;
-  height: 70px;
-  width: 70px;
+  top: -18px;
+  height: 60px;
+  width: 60px;
   vertical-align: middle;
   cursor: pointer;
   font-size: 26px;
@@ -292,7 +305,7 @@
     cursor: pointer;
     height: 2px;
     width: 30px;
-    //background-color: $color-bg2;
+    background-color: $color-green;
     @include transition(all $transition-other);
     .scrolling & {
       //background-color: $color-bg;

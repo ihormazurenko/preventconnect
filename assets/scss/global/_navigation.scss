@@ -113,21 +113,21 @@
   //    }
   //  }
   //}
-  #header-scrolling & {
-    height: 60px;
-    max-width: -webkit-calc(100% - #{158px});
-    max-width: calc(100% - #{158px});
-    > ul {
-      vertical-align: middle;
-      > li {
-        a {
-          padding: 12px 13px;
-          font-size: $size-main;
-
-        }
-      }
-    }
-  }
+  //#header-scrolling & {
+  //  height: 60px;
+  //  max-width: -webkit-calc(100% - #{158px});
+  //  max-width: calc(100% - #{158px});
+  //  > ul {
+  //    vertical-align: middle;
+  //    > li {
+  //      a {
+  //        padding: 12px 13px;
+  //        font-size: $size-main;
+  //
+  //      }
+  //    }
+  //  }
+  //}
 }
 
 //.icon-skiing {
@@ -153,6 +153,8 @@
 .mobile-menu {
   padding-top: 20px;
   padding-bottom: 20px;
+  max-width: 420px;
+  margin: 0 auto;
   > li {
     position: relative;
     display: block;
@@ -164,7 +166,7 @@
       position: relative;
       display: inline-block;
       text-transform: uppercase;
-      margin: 10px 25px 8px;
+      margin: 4px 25px 4px;
       padding: 5px 0;
       //color: $color-text3;
       text-decoration: none;
@@ -311,5 +313,22 @@
   }
   .sub-menu  {
     padding-left: 45px;
+  }
+}
+.mobile-form-group {
+  display: block;
+  max-width: 420px;
+  margin: 0 auto;
+  //padding-bottom: 60px;
+  padding: 0 25px 60px;
+  .subscribe-form {
+    margin-bottom: 20px;
+  }
+  .social-box {
+    margin-bottom: 25px;
+    width: 100%;
+  }
+  > * {
+    //margin: 0 25px 25px;
   }
 }

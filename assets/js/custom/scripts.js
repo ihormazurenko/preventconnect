@@ -23,7 +23,7 @@
         function burgerMenu() {
             $('.mobile-menu-toggle').toggleClass('active');
             $('.mobile-menu-wrap').toggleClass('showing');
-            $('#header-main').toggleClass('white-bg');
+            // $('#header-main').toggleClass('white-bg');
             $('body').toggleClass('overflow');
         }
         $('.mobile-menu-toggle, .mobile-menu-overlay').on('click', function () {
@@ -35,6 +35,29 @@
                 burgerMenu();
             }
         });
+
+        //for body height
+        $(function () {
+            $(window).on('load resize', function () {
+                setTimeout(function () {
+                    var body = $('body'),
+                        wrapper = $('.wrapper'),
+                        windowHeight = wrapper.height();
+
+                        if (windowHeight > 2500) {
+                            if (!(body.hasClass('.percentage-position'))) {
+                                body.addClass('percentage-position');
+                            }
+                        } else {
+                            if (body.hasClass('.percentage-position')) {
+                                body.removeClass('percentage-position');
+                            }
+                        }
+
+                }, 100);
+            });
+        });
+
 
 
         //for smooth-scroll
@@ -54,18 +77,18 @@
                 clip: true,
                 offset: function (anchor, toggle) {
 
-                    var myOffset = 15,
-                        currentPos =  $(window).scrollTop(),
-                        headerHeight = $('#header-scrolling').outerHeight() + myOffset,
-                        anchorNavHeight = $('.anchor-nav-box').outerHeight() + myOffset;
-
-                    if (currentPos > anchor.offsetTop) {
-                        //up
-                        return anchorNavHeight + headerHeight;
-                    } else {
-                        //down
-                        return anchorNavHeight;
-                    }
+                    // var myOffset = 15,
+                    //     currentPos =  $(window).scrollTop(),
+                    //     headerHeight = $('#header-scrolling').outerHeight() + myOffset,
+                    //     anchorNavHeight = $('.anchor-nav-box').outerHeight() + myOffset;
+                    //
+                    // if (currentPos > anchor.offsetTop) {
+                    //     //up
+                    //     return anchorNavHeight + headerHeight;
+                    // } else {
+                    //     //down
+                    //     return anchorNavHeight;
+                    // }
 
                 },
 
@@ -83,13 +106,13 @@
         }
 
 
-/*
+
         function scrollEffects() {
             var $window = $(window),
                 html = $('html'),
                 body = $('body'),
                 header = $('#header-main'),
-                anchorNav = $('.anchor-nav-box'),
+                // anchorNav = $('.anchor-nav-box'),
                 lastScrollTop = 0;
 
             $window.on('load resize', function () {
@@ -101,25 +124,25 @@
                 setTimeout(function () {
                     var windowWidth = $window.width(),
                         headerOffset = header.offset().top,
-                        headerHeight = header.outerHeight(),
-                        anchorNavHeight = anchorNav.outerHeight();
+                        headerHeight = header.outerHeight();
+                        // anchorNavHeight = anchorNav.outerHeight();
 
-                    if (anchorNav.length) {
-                        if (anchorNav.hasClass('.details')) {
-                            var anchorNavOffset = anchorNav.offset().top - 40;
-                        } else {
-                            var anchorNavOffset = anchorNav.offset().top;
-                        }
-                    }
+                    // if (anchorNav.length) {
+                    //     if (anchorNav.hasClass('.details')) {
+                    //         var anchorNavOffset = anchorNav.offset().top - 40;
+                    //     } else {
+                    //         var anchorNavOffset = anchorNav.offset().top;
+                    //     }
+                    // }
 
-                    if (currentPos > anchorNavOffset) {
-                        setTimeout(function () {
-                            if (!(anchorNav.hasClass('affix'))) {
-                                anchorNav.addClass('affix');
-                                anchorNav.next().css('margin-top', anchorNavHeight);
-                            }
-                        }, 500);
-                    }
+                    // if (currentPos > anchorNavOffset) {
+                    //     setTimeout(function () {
+                    //         if (!(anchorNav.hasClass('affix'))) {
+                    //             anchorNav.addClass('affix');
+                    //             anchorNav.next().css('margin-top', anchorNavHeight);
+                    //         }
+                    //     }, 500);
+                    // }
 
                     if (windowWidth < 1025) {
                         // for mobile & tablet
@@ -143,16 +166,16 @@
                                 }
 
                                 //for anchor nav
-                                if (anchorNav.length) {
-                                    var anchorNavTrigger = anchorNavOffset - 65;
-
-                                    if (top < anchorNavTrigger) {
-                                        if (anchorNav.hasClass('affix')) {
-                                            anchorNav.removeClass('affix');
-                                            anchorNav.next().css('margin-top', '0');
-                                        }
-                                    }
-                                }
+                                // if (anchorNav.length) {
+                                //     var anchorNavTrigger = anchorNavOffset - 65;
+                                //
+                                //     if (top < anchorNavTrigger) {
+                                //         if (anchorNav.hasClass('affix')) {
+                                //             anchorNav.removeClass('affix');
+                                //             anchorNav.next().css('margin-top', '0');
+                                //         }
+                                //     }
+                                // }
                             } else {
                                 // scroll DOWN
                                 if (top > 2 * headerTrigger) {
@@ -162,16 +185,16 @@
                                 }
 
                                 //for anchor nav
-                                if (anchorNav.length) {
-                                    var anchorNavTrigger = anchorNavOffset;
-
-                                    if (top > anchorNavTrigger) {
-                                        if (!(anchorNav.hasClass('affix'))) {
-                                            anchorNav.addClass('affix');
-                                            anchorNav.next().css('margin-top', anchorNavHeight);
-                                        }
-                                    }
-                                }
+                                // if (anchorNav.length) {
+                                //     var anchorNavTrigger = anchorNavOffset;
+                                //
+                                //     if (top > anchorNavTrigger) {
+                                //         if (!(anchorNav.hasClass('affix'))) {
+                                //             anchorNav.addClass('affix');
+                                //             anchorNav.next().css('margin-top', anchorNavHeight);
+                                //         }
+                                //     }
+                                // }
                             }
 
 
@@ -201,16 +224,16 @@
                                 }
 
                                 //for anchor nav
-                                if (anchorNav.length) {
-                                    var anchorNavTrigger = anchorNavOffset;
-
-                                    if (top < anchorNavTrigger) {
-                                        if (anchorNav.hasClass('affix')) {
-                                            anchorNav.removeClass('affix');
-                                            anchorNav.next().css('margin-top', '0');
-                                        }
-                                    }
-                                }
+                                // if (anchorNav.length) {
+                                //     var anchorNavTrigger = anchorNavOffset;
+                                //
+                                //     if (top < anchorNavTrigger) {
+                                //         if (anchorNav.hasClass('affix')) {
+                                //             anchorNav.removeClass('affix');
+                                //             anchorNav.next().css('margin-top', '0');
+                                //         }
+                                //     }
+                                // }
                             } else {
                                 // scroll DOWN
                                 //for main nav
@@ -221,16 +244,16 @@
                                 }
 
                                 //for anchor nav
-                                if (anchorNav.length) {
-                                    var anchorNavTrigger = anchorNavOffset;
-
-                                    if (top > anchorNavTrigger) {
-                                        if (!(anchorNav.hasClass('affix'))) {
-                                            anchorNav.addClass('affix');
-                                            anchorNav.next().css('margin-top', anchorNavHeight);
-                                        }
-                                    }
-                                }
+                                // if (anchorNav.length) {
+                                //     var anchorNavTrigger = anchorNavOffset;
+                                //
+                                //     if (top > anchorNavTrigger) {
+                                //         if (!(anchorNav.hasClass('affix'))) {
+                                //             anchorNav.addClass('affix');
+                                //             anchorNav.next().css('margin-top', anchorNavHeight);
+                                //         }
+                                //     }
+                                // }
                             }
 
                             lastScrollTop = top;
@@ -241,7 +264,7 @@
         }
 
         scrollEffects();
-*/
+
     });
 
 });
