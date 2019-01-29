@@ -1,78 +1,49 @@
         </main>
 
+        <?php
+            if ( has_custom_logo() ) {
+                $custom_logo = wp_get_attachment_image_src( get_theme_mod('custom_logo'), 'full' );
+                $logo_url = $custom_logo[0];
+            } else {
+                $logo_url = get_bloginfo('template_url') . '/img/logo@2x.png';
+            }
+        ?>
+
         <footer id="footer">
             <div class="container">
                 <ul class="footer-list">
                     <li>
+                        <a href="<?php echo home_url(); ?>" title="<?= esc_attr(strip_tags(get_bloginfo('name'))); ?>" class="footer-logo">
+                            <img src="<?php echo $logo_url; ?>" alt="<?= esc_attr(get_bloginfo('name')); ?>">
+                        </a>
+                        <p class="copyright">All rights reserved © 2018 PreventConnect</p>
+                    </li>
+                    <li>
                         <div class="footer-box">
-                            <a href="#" class="footer-title">Company</a>
-                            <a href="#" class="footer-link">Our story</a>
-                            <a href="#" class="footer-link">Careers</a>
-                            <a href="#" class="footer-link">Job Application</a>
+                            <ul class="footer-info-list">
+                                <li><a href="#" title="916-446-2520"><span class="icon icon-phone"></span><span class="info-text">916-446-2520</span></a></li>
+                                <li><a href="#" title="916-446-8166"><span class="icon icon-print"></span><span class="info-text">916-446-8166</span></a></li>
+                                <li><a href="#" title="1215 K St., Suite 1850 Esquire Plaza"><span class="icon icon-marker"></span><span class="info-text">1215 K St., Suite 1850  Esquire Plaza</span></a></li>
+                                <li><a href="#" title="Privacy policy"><span class="icon icon-guard"></span><span class="info-text">Privacy policy</span></a></li>
+                            </ul>
                         </div>
                     </li>
                     <li>
                         <div class="footer-box">
-                            <a href="#" class="footer-title">Contact us</a>
-                            <a href="#" class="footer-link">Factory</a>
-                            <a href="#" class="footer-link">Service</a>
-                            <a href="#" class="footer-link">Find a Dealer</a>
-                            <a href="#" class="footer-link">Dealer Inquiries</a>
-                            <a href="#" class="footer-link">Influencers</a>
-                            <a href="#" class="footer-link">Media</a>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="footer-box">
-                            <a href="#" class="footer-title">News</a>
-                            <a href="#" class="footer-link">Event Calendar</a>
-                            <a href="#" class="footer-link">Articles & Reviews</a>
-                            <a href="#" class="footer-link">Photo Contest</a>
-                            <a href="#" class="footer-link">Photos</a>
-                            <a href="#" class="footer-link">Travel Stories</a>
-                            <a href="#" class="footer-link">Updates</a>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="footer-box">
-                            <a href="#" class="footer-title">Services</a>
-                            <a href="#" class="footer-link">Schedule</a>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="footer-box">
-                            <span class="footer-title">Stay In Touch</span>
-                            <ul class="social-list">
+                            <ul class="footer-menu">
                                 <li>
-                                    <a href="#" title="Facebook">
-                                        <i class="fab fa-facebook-f"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#" title="Twitter">
-                                        <i class="fab fa-twitter"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#" title="Google+">
-                                        <i class="fab fa-google-plus-g"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#" title="Vimeo">
-                                        <i class="fab fa-vimeo-v"></i>
-                                    </a>
+                                    <a href="#"  title="Home">Home</a>
+                                    <a href="#"  title="About Us">About Us</a>
+                                    <a href="#"  title="CALCASA Main Site">CALCASA Main Site</a>
+                                    <a href="#"  title="Contact">Contact</a>
                                 </li>
                             </ul>
                         </div>
                     </li>
                 </ul>
+                <p class="copyright mobile">All rights reserved © 2018 PreventConnect</p>
             </div>
-            <div class="footer-bottom-box">
-                <div class="container">
-                    <p class="copyright">© Copyright Four Wheel Campers 2018. All rights reserved</p>
-                </div>
-            </div>
+        </footer>
         </footer>
     </div><!--/wrap-->
 

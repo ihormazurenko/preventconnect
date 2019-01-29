@@ -11,11 +11,19 @@
 <body <?php body_class(); ?>>
     <div class="wrapper">
         <div class="bg-wrap">
-            <span class="bg-icon icon-home_abstract_1"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span><span class="path5"></span><span class="path6"></span><span class="path7"></span><span class="path8"></span><span class="path9"></span></span>
-            <span class="bg-icon icon-home_abstract_2"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span><span class="path5"></span><span class="path6"></span><span class="path7"></span><span class="path8"></span><span class="path9"></span></span>
-            <span class="bg-icon icon-home_abstract_3"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span><span class="path5"></span><span class="path6"></span><span class="path7"></span><span class="path8"></span><span class="path9"></span></span>
-            <span class="bg-icon icon-home_abstract_4"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span><span class="path5"></span><span class="path6"></span><span class="path7"></span><span class="path8"></span><span class="path9"></span></span>
-            <span class="bg-icon icon-home_abstract_5"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span><span class="path5"></span><span class="path6"></span><span class="path7"></span><span class="path8"></span><span class="path9"></span></span>
+            <?php if ( is_front_page() ) { ?>
+                <span class="bg-icon icon-home_abstract_1"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span><span class="path5"></span><span class="path6"></span><span class="path7"></span><span class="path8"></span><span class="path9"></span></span>
+                <span class="bg-icon icon-home_abstract_2"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span><span class="path5"></span><span class="path6"></span><span class="path7"></span><span class="path8"></span><span class="path9"></span></span>
+                <span class="bg-icon icon-home_abstract_3"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span><span class="path5"></span><span class="path6"></span><span class="path7"></span><span class="path8"></span><span class="path9"></span></span>
+                <span class="bg-icon icon-home_abstract_4"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span><span class="path5"></span><span class="path6"></span><span class="path7"></span><span class="path8"></span><span class="path9"></span></span>
+                <span class="bg-icon icon-home_abstract_5"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span><span class="path5"></span><span class="path6"></span><span class="path7"></span><span class="path8"></span><span class="path9"></span></span>
+            <?php } else { ?>
+                <span class="bg-icon icon-abstract_1"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span><span class="path5"></span><span class="path6"></span><span class="path7"></span><span class="path8"></span><span class="path9"></span></span>
+                <span class="bg-icon icon-abstract_2"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span><span class="path5"></span><span class="path6"></span><span class="path7"></span><span class="path8"></span><span class="path9"></span></span>
+                <span class="bg-icon icon-abstract_3"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span><span class="path5"></span><span class="path6"></span><span class="path7"></span><span class="path8"></span><span class="path9"></span></span>
+                <span class="bg-icon icon-abstract_4"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span><span class="path5"></span><span class="path6"></span><span class="path7"></span><span class="path8"></span><span class="path9"></span></span>
+                <span class="bg-icon icon-abstract_5"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span><span class="path5"></span><span class="path6"></span><span class="path7"></span><span class="path8"></span><span class="path9"></span></span>
+            <?php } ?>
             <div class="double-bg"></div>
         </div>
 
@@ -69,30 +77,17 @@
                     </div>
                 </div>
                 <div class="bottom-box">
-                    <nav class="main-nav desktop">
-                        <ul>
-                            <li class="current-menu-item"><a href="#">About us</a></li>
-                            <li><a href="#">Web Conferences</a></li>
-                            <li><a href="#">Podcasts</a></li>
-                            <li><a href="#">Blog</a></li>
-                            <li><a href="#">Resources</a>
-                                <ul class="sub-menu">
-                                    <li class="menu-item"><a href="#">Wiki</a></li>
-                                    <li class="menu-item"><a href="#">Newsletters</a></li>
-                                    <li class="menu-item"><a href="#">eLearning</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </nav>
-                    <?php /* wp_nav_menu(array(
-                        'theme_location'  => 'main-menu',
-                        'menu'            => 'Main Navigation',
-                        'container'       => 'nav',
-                        'container_class' => 'main-nav desktop',
-                        'container_id'    => false,
-                        'items_wrap'      => '<ul>%3$s</ul>',
-                        'depth'           => 2
-                    )); */ ?>
+                    <?php
+                        wp_nav_menu(array(
+                            'theme_location'  => 'main-menu',
+                            'menu'            => 'Main Menu',
+                            'container'       => 'nav',
+                            'container_class' => 'main-nav desktop',
+                            'container_id'    => false,
+                            'items_wrap'      => '<ul>%3$s</ul>',
+                            'depth'           => 2
+                        ));
+                    ?>
                 </div>
 
                 <div class="mobile-menu-toggle">
@@ -100,19 +95,43 @@
                 </div>
                 <div class="mobile-menu-wrap">
                     <div class="mobile-menu-box">
-                        <ul class="mobile-menu">
-                            <li><a href="#">About us</a></li>
-                            <li><a href="#">Web Conferences</a></li>
-                            <li><a href="#">Podcasts</a></li>
-                            <li><a href="#">Blog</a></li>
-                            <li><a href="#">Resources</a>
-                                <ul class="sub-menu">
-                                    <li class="menu-item"><a href="#">Wiki</a></li>
-                                    <li class="menu-item"><a href="#">Newsletters</a></li>
-                                    <li class="menu-item"><a href="#">eLearning</a></li>
+                        <?php wp_nav_menu(array(
+                            'theme_location'  => 'main-menu',
+                            'menu'            => 'Main Navigation',
+                            'container'       => false,
+                            'menu_class'      => 'mobile-menu',
+                            'items_wrap'      => '<ul class="%2$s">%3$s</ul>',
+                            'depth'           => 2
+                        )); ?>
+                        <div class="mobile-form-group">
+                            <form action="" class="subscribe-form">
+                                <ul class="form-list">
+                                    <li>
+                                        <input type="email" class="input-style" placeholder="Join our mailing list">
+                                    </li>
+                                    <li>
+                                        <input type="submit" class="btn" value="Join">
+                                    </li>
                                 </ul>
-                            </li>
-                        </ul>
+                            </form>
+                            <div class="social-box">
+                                <ul class="social-list">
+                                    <li>
+                                        <a href="https://twitter.com/preventconnect" target="_blank" rel="nofollow" title="Twitter"><span class="icon icon-twitter"></span></a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.facebook.com/PreventConnect" target="_blank" rel="nofollow" title="Facebook"><span class="icon icon-facebook"></span></a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <form role="search" method="get" class="search-form" action="">
+                                <label>
+                                    <span class="screen-reader-text">Search</span>
+                                    <input type="search" class="search-field" placeholder="Search" value="" name="s">
+                                </label>
+                                <input type="submit" class="search-submit" value="Search">
+                            </form>
+                        </div>
                     </div>
                     <div class="mobile-menu-overlay"></div>
                 </div>
@@ -158,21 +177,17 @@
                     </div>
                 </div>
                 <div class="bottom-box">
-                    <nav class="main-nav desktop">
-                        <ul>
-                            <li class="current-menu-item"><a href="#">About us</a></li>
-                            <li><a href="#">Web Conferences</a></li>
-                            <li><a href="#">Podcasts</a></li>
-                            <li><a href="#">Blog</a></li>
-                            <li><a href="#">Resources</a>
-                                <ul class="sub-menu">
-                                    <li class="menu-item"><a href="#">Wiki</a></li>
-                                    <li class="menu-item"><a href="#">Newsletters</a></li>
-                                    <li class="menu-item"><a href="#">eLearning</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </nav>
+                    <?php
+                        wp_nav_menu(array(
+                            'theme_location'  => 'main-menu',
+                            'menu'            => 'Main Menu',
+                            'container'       => 'nav',
+                            'container_class' => 'main-nav desktop',
+                            'container_id'    => false,
+                            'items_wrap'      => '<ul>%3$s</ul>',
+                            'depth'           => 2
+                        ));
+                    ?>
                 </div>
 
                 <div class="mobile-menu-toggle">
@@ -180,19 +195,43 @@
                 </div>
                 <div class="mobile-menu-wrap">
                     <div class="mobile-menu-box">
-                        <ul class="mobile-menu">
-                            <li><a href="#">About us</a></li>
-                            <li><a href="#">Web Conferences</a></li>
-                            <li><a href="#">Podcasts</a></li>
-                            <li><a href="#">Blog</a></li>
-                            <li><a href="#">Resources</a>
-                                <ul class="sub-menu">
-                                    <li class="menu-item"><a href="#">Wiki</a></li>
-                                    <li class="menu-item"><a href="#">Newsletters</a></li>
-                                    <li class="menu-item"><a href="#">eLearning</a></li>
+                        <?php wp_nav_menu(array(
+                            'theme_location'  => 'main-menu',
+                            'menu'            => 'Main Navigation',
+                            'container'       => false,
+                            'menu_class'      => 'mobile-menu',
+                            'items_wrap'      => '<ul class="%2$s">%3$s</ul>',
+                            'depth'           => 2
+                        )); ?>
+                        <div class="mobile-form-group">
+                            <form action="" class="subscribe-form">
+                                <ul class="form-list">
+                                    <li>
+                                        <input type="email" class="input-style" placeholder="Join our mailing list">
+                                    </li>
+                                    <li>
+                                        <input type="submit" class="btn" value="Join">
+                                    </li>
                                 </ul>
-                            </li>
-                        </ul>
+                            </form>
+                            <div class="social-box">
+                                <ul class="social-list">
+                                    <li>
+                                        <a href="https://twitter.com/preventconnect" target="_blank" rel="nofollow" title="Twitter"><span class="icon icon-twitter"></span></a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.facebook.com/PreventConnect" target="_blank" rel="nofollow" title="Facebook"><span class="icon icon-facebook"></span></a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <form role="search" method="get" class="search-form" action="">
+                                <label>
+                                    <span class="screen-reader-text">Search</span>
+                                    <input type="search" class="search-field" placeholder="Search" value="" name="s">
+                                </label>
+                                <input type="submit" class="search-submit" value="Search">
+                            </form>
+                        </div>
                     </div>
                     <div class="mobile-menu-overlay"></div>
                 </div>
