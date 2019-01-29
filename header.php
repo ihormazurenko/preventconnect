@@ -48,34 +48,6 @@
                     </div>
                     <div class="right-box">
                         <?php get_template_part('inc/header', 'top-group'); ?>
-<!--                        <form action="" class="subscribe-form">-->
-<!--                            <ul class="form-list">-->
-<!--                                <li>-->
-<!--                                    <input type="email" class="input-style" placeholder="Join our mailing list">-->
-<!--                                </li>-->
-<!--                                <li>-->
-<!--                                    <input type="submit" class="btn" value="Join">-->
-<!--                                </li>-->
-<!--                            </ul>-->
-<!--                        </form>-->
-<!--                        <div class="social-box">-->
-<!--                            <ul class="social-list">-->
-<!--                                <li>-->
-<!--                                    <a href="https://twitter.com/preventconnect" target="_blank" rel="nofollow" title="Twitter"><span class="icon icon-twitter"></span></a>-->
-<!--                                </li>-->
-<!--                                <li>-->
-<!--                                    <a href="https://www.facebook.com/PreventConnect" target="_blank" rel="nofollow" title="Facebook"><span class="icon icon-facebook"></span></a>-->
-<!--                                </li>-->
-<!--                            </ul>-->
-<!--                        </div>-->
-<!--                        --><?php //get_search_form(); ?>
-<!--                        <form role="search" method="get" class="search-form" action="">-->
-<!--                            <label>-->
-<!--                                <span class="screen-reader-text">Search</span>-->
-<!--                                <input type="search" class="search-field" placeholder="Search" value="" name="s">-->
-<!--                            </label>-->
-<!--                            <input type="submit" class="search-submit" value="Search">-->
-<!--                        </form>-->
                     </div>
                 </div>
                 <div class="bottom-box">
@@ -107,34 +79,6 @@
                         )); ?>
                         <div class="mobile-form-group">
 	                        <?php get_template_part('inc/header', 'top-group'); ?>
-<!--                            <form action="" class="subscribe-form">-->
-<!--                                <ul class="form-list">-->
-<!--                                    <li>-->
-<!--                                        <input type="email" class="input-style" placeholder="Join our mailing list">-->
-<!--                                    </li>-->
-<!--                                    <li>-->
-<!--                                        <input type="submit" class="btn" value="Join">-->
-<!--                                    </li>-->
-<!--                                </ul>-->
-<!--                            </form>-->
-<!--                            <div class="social-box">-->
-<!--                                <ul class="social-list">-->
-<!--                                    <li>-->
-<!--                                        <a href="https://twitter.com/preventconnect" target="_blank" rel="nofollow" title="Twitter"><span class="icon icon-twitter"></span></a>-->
-<!--                                    </li>-->
-<!--                                    <li>-->
-<!--                                        <a href="https://www.facebook.com/PreventConnect" target="_blank" rel="nofollow" title="Facebook"><span class="icon icon-facebook"></span></a>-->
-<!--                                    </li>-->
-<!--                                </ul>-->
-<!--                            </div>-->
-<!--	                        --><?php //get_search_form(); ?>
-<!--<!--                            <form role="search" method="get" class="search-form" action="">-->-->
-<!--<!--                                <label>-->-->
-<!--<!--                                    <span class="screen-reader-text">Search</span>-->-->
-<!--<!--                                    <input type="search" class="search-field" placeholder="Search" value="" name="s">-->-->
-<!--<!--                                </label>-->-->
-<!--<!--                                <input type="submit" class="search-submit" value="Search">-->-->
-<!--<!--                            </form>-->-->
                         </div>
                     </div>
                     <div class="mobile-menu-overlay"></div>
@@ -152,33 +96,6 @@
                     </div>
                     <div class="right-box">
 	                    <?php get_template_part('inc/header', 'top-group'); ?>
-<!--                        <form action="" class="subscribe-form">-->
-<!--                            <ul class="form-list">-->
-<!--                                <li>-->
-<!--                                    <input type="email" class="input-style" placeholder="Join our mailing list">-->
-<!--                                </li>-->
-<!--                                <li>-->
-<!--                                    <input type="submit" class="btn" value="Join">-->
-<!--                                </li>-->
-<!--                            </ul>-->
-<!--                        </form>-->
-<!--                        <div class="social-box">-->
-<!--                            <ul class="social-list">-->
-<!--                                <li>-->
-<!--                                    <a href="https://twitter.com/preventconnect" target="_blank" rel="nofollow" title="Twitter"><span class="icon icon-twitter"></span></a>-->
-<!--                                </li>-->
-<!--                                <li>-->
-<!--                                    <a href="https://www.facebook.com/PreventConnect" target="_blank" rel="nofollow" title="Facebook"><span class="icon icon-facebook"></span></a>-->
-<!--                                </li>-->
-<!--                            </ul>-->
-<!--                        </div>-->
-<!--                        <form role="search" method="get" class="search-form" action="">-->
-<!--                            <label>-->
-<!--                                <span class="screen-reader-text">Search</span>-->
-<!--                                <input type="search" class="search-field" placeholder="Search" value="" name="s">-->
-<!--                            </label>-->
-<!--                            <input type="submit" class="search-submit" value="Search">-->
-<!--                        </form>-->
                     </div>
                 </div>
                 <div class="bottom-box">
@@ -210,33 +127,6 @@
                         )); ?>
                         <div class="mobile-form-group">
 	                        <?php get_template_part('inc/header', 'top-group'); ?>
-<!--                            <form action="" class="subscribe-form">-->
-<!--                                <ul class="form-list">-->
-<!--                                    <li>-->
-<!--                                        <input type="email" class="input-style" placeholder="Join our mailing list">-->
-<!--                                    </li>-->
-<!--                                    <li>-->
-<!--                                        <input type="submit" class="btn" value="Join">-->
-<!--                                    </li>-->
-<!--                                </ul>-->
-<!--                            </form>-->
-<!--                            <div class="social-box">-->
-<!--                                <ul class="social-list">-->
-<!--                                    <li>-->
-<!--                                        <a href="https://twitter.com/preventconnect" target="_blank" rel="nofollow" title="Twitter"><span class="icon icon-twitter"></span></a>-->
-<!--                                    </li>-->
-<!--                                    <li>-->
-<!--                                        <a href="https://www.facebook.com/PreventConnect" target="_blank" rel="nofollow" title="Facebook"><span class="icon icon-facebook"></span></a>-->
-<!--                                    </li>-->
-<!--                                </ul>-->
-<!--                            </div>-->
-<!--                            <form role="search" method="get" class="search-form" action="">-->
-<!--                                <label>-->
-<!--                                    <span class="screen-reader-text">Search</span>-->
-<!--                                    <input type="search" class="search-field" placeholder="Search" value="" name="s">-->
-<!--                                </label>-->
-<!--                                <input type="submit" class="search-submit" value="Search">-->
-<!--                            </form>-->
                         </div>
                     </div>
                     <div class="mobile-menu-overlay"></div>

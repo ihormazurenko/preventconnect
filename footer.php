@@ -7,6 +7,17 @@
             } else {
                 $logo_url = get_bloginfo('template_url') . '/img/logo@2x.png';
             }
+
+            $current_year = date("Y");
+            $copyright = '';
+
+            if ($current_year == 2018) {
+	            $copyright = 'All rights reserved © 2018 PreventConnect';
+            } elseif ($current_year > 2018) {
+	            $copyright = 'All rights reserved © 2018 - '.$current_year.' PreventConnect';
+            }
+
+
         ?>
 
         <footer id="footer">
@@ -16,7 +27,11 @@
                         <a href="<?php echo home_url(); ?>" title="<?= esc_attr(strip_tags(get_bloginfo('name'))); ?>" class="footer-logo">
                             <img src="<?php echo $logo_url; ?>" alt="<?= esc_attr(get_bloginfo('name')); ?>">
                         </a>
-                        <p class="copyright">All rights reserved © 2018 PreventConnect</p>
+	                    <?php
+                            if ($copyright) {
+	                            echo '<p class="copyright">' . $copyright . '</p>';
+                            }
+                        ?>
                     </li>
                     <li>
                         <div class="footer-box">
@@ -41,7 +56,11 @@
                         </div>
                     </li>
                 </ul>
-                <p class="copyright mobile">All rights reserved © 2018 PreventConnect</p>
+	            <?php
+	            if ($copyright) {
+		            echo '<p class="copyright mobile">' . $copyright . '</p>';
+	            }
+	            ?>
             </div>
         </footer>
         </footer>
