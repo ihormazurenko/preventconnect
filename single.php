@@ -1,21 +1,15 @@
 <?php get_header(); ?>
 
-    <div class="content-wrap">
-        <div class="content">
+    <section class="section section-content">
+        <div class="container">
 
             <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
-                <article>
+                <?php the_title('<div class="section-title-box"><h1 class="section-title small">', '</h1></div>'); ?>
 
-                    <header>
-                        <?php the_title('<h1>', '</h1>'); ?>
-                    </header>
-
-                    <section>
-                        <?php the_content(); ?>
-                    </section>
-
-                </article>
+                <div class="content big">
+                    <?php the_content(); ?>
+                </div>
 
             <?php endwhile; else: endif; ?>
 
@@ -23,6 +17,6 @@
 
         <?php get_sidebar(); ?>
 
-    </div><!--/content-wrap-->
+    </section>
 
 <?php get_footer(); ?>

@@ -1,19 +1,22 @@
 <?php get_header(); ?>
 
-	<div class="content-wrap">
-		<div class="container">
-			<div class="content">
+    <section class="section section-content">
+        <div class="container">
 
-				<?php 
-					if ( have_posts() ) : while ( have_posts() ) : the_post();
+	        <?php the_title('<div class="section-title-box"><h1 class="section-title small">', '</h1></div>'); ?>
 
-			    		the_content();
-			    		
-			    	endwhile; else: endif; 
-			    ?>
+            <div class="content big">
 
-			</div>
-		</div>
-	</div>
+				<?php
+				if ( have_posts() ) : while ( have_posts() ) : the_post();
+
+					the_content();
+
+				endwhile; else: endif;
+				?>
+
+            </div>
+        </div>
+    </section>
 
 <?php get_footer(); ?>

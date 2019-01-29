@@ -100,16 +100,16 @@ if ( function_exists( 'register_nav_menus' ) ) {
 
 
 // for excerpts
-//function new_excerpt_more( $more ) {
-//    return '&nbsp;&hellip;';
-//}
-//add_filter( 'excerpt_more', 'new_excerpt_more' );
+function new_excerpt_more( $more ) {
+    return '&nbsp;&hellip;';
+}
+add_filter( 'excerpt_more', 'new_excerpt_more' );
 
 
-//function new_excerpt_length($length) {
-//  return 30;
-//}
-//add_filter('excerpt_length', 'new_excerpt_length');
+function new_excerpt_length($length) {
+  return 20;
+}
+add_filter('excerpt_length', 'new_excerpt_length');
 
 /* Hack on overwriting the guid parameter when publishing or updating a post in the admin panel (the permalink in the current structure is written)
 --------------------------------------------------------------------------------------------------------------------------------- */

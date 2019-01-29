@@ -30,14 +30,14 @@
                     </li>
                     <li>
                         <div class="footer-box">
-                            <ul class="footer-menu">
-                                <li>
-                                    <a href="#"  title="Home">Home</a>
-                                    <a href="#"  title="About Us">About Us</a>
-                                    <a href="#"  title="CALCASA Main Site">CALCASA Main Site</a>
-                                    <a href="#"  title="Contact">Contact</a>
-                                </li>
-                            </ul>
+	                        <?php wp_nav_menu(array(
+		                        'theme_location'  => 'footer-menu',
+		                        'menu'            => 'Footer Menu',
+		                        'container'       => false,
+		                        'menu_class'      => 'footer-menu',
+		                        'items_wrap'      => '<ul class="%2$s">%3$s</ul>',
+		                        'depth'           => 1
+	                        )); ?>
                         </div>
                     </li>
                 </ul>

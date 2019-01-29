@@ -1,4 +1,4 @@
-.wp-pagenavi-holder {
+.pagenavi-block {
   text-align: center;
   .section-blog & {
     margin-bottom: -70px;
@@ -61,6 +61,7 @@
     &.last,
     &.previouspostslink,
     &.nextpostslink {
+      overflow: hidden;
       position: relative;
       display: inline-block;
       width: 30px;
@@ -106,6 +107,8 @@
     //    border: none;
     //  }
     //}
+    &.first,
+    &.last,
     &.previouspostslink,
     &.nextpostslink {
       //width: 30px;
@@ -113,6 +116,7 @@
       span {
         display: none;
       }
+      &:before,
       &:after {
         content: '\e905';
         position: absolute;
@@ -138,22 +142,35 @@
       @media all and (min-width: 769px) {
         &:hover,
         &:focus {
+          &:before,
           &:after {
             color: $color-green;
           }
         }
       }
     }
+    &.previouspostslink,
+    &.nextpostslink {
+      &:before {
+        display: none;
+      }
+    }
+    &.first,
     &.previouspostslink {
-      &:after {
+      &:after,
+      &:before {
         @include rotate(180deg);
       }
     }
-  }
-  > :first-child:not(.previouspostslink) {
-    border: none;
-  }
-  > :nth-last-child(2):not(.extend):not(.current):not(.page) {
-    @include border-radius(2em 0 0 2em);
+    &.first,
+    &.last {
+      &:after {
+        left: -3px;
+      }
+      &:before {
+        left: 3px;
+      }
+
+    }
   }
 }
