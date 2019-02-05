@@ -60,10 +60,11 @@
   z-index: 20;
 }
 
+
 #header-scrolling {
   position: fixed;
   z-index: 1010;
-  top: -140px;
+  top: -200px;
   background-color: $white;
   box-shadow: none;
   .direction-up & {
@@ -71,31 +72,31 @@
     @include box-shadow(0 12px 40px 0, rgba(17, 57, 91, .08));
   }
   .direction-down & {
-    top: -140px;
+    //top: -140px;
   }
   .overflow.direction-down & {
     top: 0;
   }
   .admin-bar & {
-    top: -102px;
+    //top: -102px;
   }
   .direction-up.admin-bar & {
     top: 32px;
   }
   .direction-down.admin-bar & {
-    top: -102px;
+    //top: -102px;
   }
   @media all and (max-width: 1024px) {
-    top: -60px;
+    //top: -60px;
     min-height: 60px;
     .direction-down & {
-      top: -60px;
+      //top: -60px;
     }
     .admin-bar & {
       top: -76px;
     }
     .direction-down.admin-bar & {
-      top: -76px;
+      //top: -76px;
     }
   }
   @media all and (max-width: 782px) {

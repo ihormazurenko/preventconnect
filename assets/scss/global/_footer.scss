@@ -95,7 +95,7 @@
       .footer-info-list {
         > li {
           overflow: hidden;
-          a {
+          .footer-info-link {
             display: block;
             padding: 7px 0;
             font-family: $font-poppins;
@@ -120,15 +120,19 @@
               padding-left: 8px;
               //display: inline-block;
             }
-            @media all and (min-width: 769px) {
-              &:hover,
-              &:focus {
-                color: $color-blue;
-                .icon {
-                  opacity: .8;
-                }
-                .icon:before {
-                  //color: green;
+          }
+          a {
+            &.footer-info-link {
+              @media all and (min-width: 769px) {
+                &:hover,
+                &:focus {
+                  color: $color-blue;
+                  .icon {
+                    opacity: .8;
+                  }
+                  .icon:before {
+                    //color: green;
+                  }
                 }
               }
             }

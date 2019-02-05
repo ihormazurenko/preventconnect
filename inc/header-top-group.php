@@ -1,3 +1,8 @@
+<?php
+ $social_links = get_field('social_links', 'option');
+
+
+?>
 <form action="" class="subscribe-form">
 	<ul class="form-list">
 		<li>
@@ -8,14 +13,34 @@
 		</li>
 	</ul>
 </form>
-<div class="social-box">
-	<ul class="social-list">
-		<li>
-			<a href="https://twitter.com/preventconnect" target="_blank" rel="nofollow" title="Twitter"><span class="icon icon-twitter"></span></a>
-		</li>
-		<li>
-			<a href="https://www.facebook.com/PreventConnect" target="_blank" rel="nofollow" title="Facebook"><span class="icon icon-facebook"></span></a>
-		</li>
-	</ul>
-</div>
+<?php
+    if ($social_links && is_array($social_links) && count($social_links) > 0) {
+        ?>
+            <div class="social-box">
+                <ul class="social-list">
+                    <?php
+                        foreach ($social_links as $value) {
+	                        $social_link = $value['link'];
+	                        $social_type = $value['social'];
+
+	                        if ( $social_type && $social_link ) {
+	                            if ($social_type == 'facebook') {
+		                            $social_name = 'Facebook';
+		                            $social_icon = 'icon-facebook';
+                                } elseif ($social_type = 'twitter') {
+		                            $social_name = 'Twitter';
+		                            $social_icon = 'icon-twitter';
+                                }
+		                        ?>
+                                <li>
+                                    <a href="<?php echo esc_url($social_link); ?>" target="_blank" rel="nofollow"
+                                       title="<?php echo esc_attr($social_name); ?>"><span class="icon <?php echo $social_icon; ?>"></span></a>
+                                </li>
+		                        <?php
+	                        }
+                        }
+                        ?>
+                </ul>
+            </div>
+        <?php }?>
 <?php get_search_form(); ?>

@@ -112,7 +112,7 @@
                 html = $('html'),
                 body = $('body'),
                 header = $('#header-main'),
-                // anchorNav = $('.anchor-nav-box'),
+                delayHeight = 100,
                 lastScrollTop = 0;
 
             $window.on('load resize', function () {
@@ -155,6 +155,11 @@
                             if (lastScrollTop > top) {
                                 // scroll UP
                                 if (top == 0 && top < 2 * headerTrigger) {
+                                    if (body.hasClass('direction-up')) {
+                                        body.removeClass('direction-up');
+                                        header.removeClass('fixed');
+                                    }
+                                } else if (top != 0 && top < headerTrigger + delayHeight) {
                                     if (body.hasClass('direction-up')) {
                                         body.removeClass('direction-up');
                                         header.removeClass('fixed');
@@ -213,6 +218,11 @@
                                 // scroll UP
                                 //for main nav
                                 if (top == 0 && top < 2 * headerTrigger) {
+                                    if (body.hasClass('direction-up')) {
+                                        body.removeClass('direction-up');
+                                        header.removeClass('fixed');
+                                    }
+                                } else if (top != 0 && top < headerTrigger + delayHeight) {
                                     if (body.hasClass('direction-up')) {
                                         body.removeClass('direction-up');
                                         header.removeClass('fixed');

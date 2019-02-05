@@ -211,15 +211,20 @@
         @include border-radius($radius-small);
       }
       & + .bottom-box {
+        width: 87%;
         margin-top: -212px;
+        padding-top: 260px;
+        .content {
+          margin-right: 60px;
+        }
       }
     }
     .bottom-box {
       position: relative;
       z-index: 3;
       float: right;
-      width: 87%;
-      padding: 260px 54px 40px 62px;
+      width: 100%;
+      padding: 60px 54px 40px 62px;
       background-color: $white;
       @include border-radius($radius-small);
       @include box-shadow(0 12px 40px 0, rgba(17, 57, 91, .08));
@@ -241,7 +246,7 @@
     }
     .content {
       margin-bottom: 16px;
-      margin-right: 60px;
+      //margin-right: 60px;
     }
     @media all and (max-width: 767px) {
       max-width: 480px;
@@ -256,12 +261,13 @@
           width: calc(100% - #{20px});
           margin-top: -100px;
           margin-left: 20px;
+          padding-top: 130px;
         }
       }
       .bottom-box {
         width: 95%;
         //margin-top: -100px;
-        padding: 130px 30px 30px 30px;
+        padding: 30px 30px 30px 30px;
       }
     }
 

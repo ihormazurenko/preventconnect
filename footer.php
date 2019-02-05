@@ -11,13 +11,14 @@
             $current_year = date("Y");
             $copyright = '';
 
-            if ($current_year == 2018) {
-	            $copyright = 'All rights reserved © 2018 PreventConnect';
-            } elseif ($current_year > 2018) {
+            if ($current_year > 2018) {
 	            $copyright = 'All rights reserved © 2018 - '.$current_year.' PreventConnect';
+            } else {
+                $copyright = 'All rights reserved © 2018 PreventConnect';
             }
 
-
+            $footer_contact = get_field('footer_contact', 'option');
+            $footer_contact_arr = [];
         ?>
 
         <footer id="footer">
@@ -33,16 +34,49 @@
                             }
                         ?>
                     </li>
-                    <li>
-                        <div class="footer-box">
-                            <ul class="footer-info-list">
-                                <li><a href="#" title="916-446-2520"><span class="icon icon-phone"></span><span class="info-text">916-446-2520</span></a></li>
-                                <li><a href="#" title="916-446-8166"><span class="icon icon-print"></span><span class="info-text">916-446-8166</span></a></li>
-                                <li><a href="#" title="1215 K St., Suite 1850 Esquire Plaza"><span class="icon icon-marker"></span><span class="info-text">1215 K St., Suite 1850  Esquire Plaza</span></a></li>
-                                <li><a href="#" title="Privacy policy"><span class="icon icon-guard"></span><span class="info-text">Privacy policy</span></a></li>
-                            </ul>
-                        </div>
-                    </li>
+                    <?php
+                        if ($footer_contact && is_array($footer_contact) && count($footer_contact) > 0 ) {
+	                        $footer_contact_arr = [
+	                                'phone' => $footer_contact['phone'],
+	                                'fax' => $footer_contact['fax'],
+	                                'address' => $footer_contact['address'],
+	                                'privacy_policy' => $footer_contact['privacy_policy'],
+                            ];
+
+	                        if ($footer_contact_arr && is_array($footer_contact_arr) && count($footer_contact_arr) > 0) {
+                                ?>
+                                <li class="footer-box">
+                                    <ul class="footer-info-list">
+                                        <?php
+                                            foreach ($footer_contact_arr as $key => $value) {
+                                                $label = trim($value['label']);
+                                                $link = trim($value['link']);
+                                                $icon = '';
+
+                                                if ($key == 'phone') {
+                                                    $icon = 'icon-phone';
+                                                } elseif ($key == 'fax') {
+                                                    $icon = 'icon-print';
+                                                } elseif ($key == 'address') {
+                                                    $icon = 'icon-marker';
+                                                } elseif ($key == 'privacy_policy') {
+                                                    $icon = 'icon-guard';
+                                                }
+
+                                                if ($label && empty($link)) {
+                                                    echo '<li><p class="footer-info-link"><span class="icon '.$icon.'"></span><span class="info-text">'.$label.'</span></p></li>';
+                                                } elseif ($label && $link) {
+	                                                $link = ($key == 'phone' || $key == 'fax') ? 'tel:'.$link : $link ;
+                                                    echo '<li><a href="'.esc_url($link).'" title="'.esc_attr($label).'" class="footer-info-link"><span class="icon '.$icon.'"></span><span class="info-text">'.$label.'</span></a></li>';
+                                                }
+                                            }
+                                        ?>
+                                    </ul>
+                                </li>
+                                <?php
+                            }
+                       }
+                    ?>
                     <li>
                         <div class="footer-box">
 	                        <?php wp_nav_menu(array(
@@ -63,8 +97,7 @@
 	            ?>
             </div>
         </footer>
-        </footer>
-    </div><!--/wrap-->
+    </div>
 
     <?php wp_footer(); ?>
 </body>

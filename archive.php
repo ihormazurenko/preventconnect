@@ -17,7 +17,7 @@
                 </ul>
 
             <?php
-            else: echo "<div class='no-results-wrap'><p class='not-found'>".__('Sorry, no articles found...', 'pc')."</p></div>";
+            else: echo "<div class='no-results-wrap'><p class='not-found'>".__('Sorry, no posts found...', 'pc')."</p></div>";
             endif;
             ?>
         </div>

@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Blog
+ * Template Name: Podcast
  */
 get_header(); ?>
 
@@ -9,7 +9,11 @@ get_header(); ?>
             <div class="section-title-box">
                 <h1 class="section-title small"><?php echo get_the_title() ;?></h1>
             </div>
-
+            <?php if (get_the_content()) { ?>
+                <div class="section-desc content big">
+                    <?php the_content(); ?>
+                </div>
+            <?php } ?>
             <?php
                 global $wp_query;
 
@@ -17,7 +21,7 @@ get_header(); ?>
                 $args = array(
                     'post_type'     => 'post',
                     'post_status'   => 'publish',
-                    'cat'            => 38,
+                    'cat'            => 28,
                     'orderby'       => 'date',
                     'order'         => 'DESC',
                     'paged'         => $paged,
