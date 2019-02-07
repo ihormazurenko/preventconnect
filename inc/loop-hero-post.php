@@ -11,7 +11,7 @@
     <a href="<?php echo esc_url($url); ?>" title="<?php echo esc_attr($title); ?>">
         <div class="home-blog-box">
             <div class="centered-img">
-	            <?php the_post_thumbnail('medium_large', array(
+	            <?php the_post_thumbnail('archive-thumb', array(
 		            'alt'   => esc_attr($title)
 	            )); ?>
             </div>

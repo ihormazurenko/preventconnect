@@ -6,13 +6,28 @@
 <form action="" class="subscribe-form">
 	<ul class="form-list">
 		<li>
-			<input type="email" class="input-style" placeholder="Join our mailing list">
+			<input disabled type="text" class="input-style" placeholder="<?php esc_attr_e('Join our mailing list','pc'); ?>">
 		</li>
 		<li>
-			<input type="submit" class="btn" value="Join">
+            <a href="https://visitor.r20.constantcontact.com/d.jsp?llr=occzzmoab&amp;p=oi&amp;m=1114973702222&amp;sit=zm4kg5eib&amp;f=2825a9d7-1b5a-4569-bc33-4d5aa86b98e1" class="btn" target="_blank" rel="nofollow" title="<?php esc_attr_e('Join','pc'); ?>"><?php _e('Join','pc'); ?></a>
 		</li>
 	</ul>
 </form>
+<?php
+/*
+ <form action="" class="subscribe-form">
+	<ul class="form-list">
+		<li>
+			<input disabled type="text" class="input-style" placeholder="Join our mailing list">
+		</li>
+		<li>
+            <a href="https://visitor.r20.constantcontact.com/d.jsp?llr=occzzmoab&amp;p=oi&amp;m=1114973702222&amp;sit=zm4kg5eib&amp;f=2825a9d7-1b5a-4569-bc33-4d5aa86b98e1" class="btn" title=""></a>
+<!--			<input type="submit" class="btn" value="Join">-->
+		</li>
+	</ul>
+</form>
+ */
+?>
 <?php
     if ($social_links && is_array($social_links) && count($social_links) > 0) {
         ?>

@@ -1,11 +1,7 @@
 <?php
     $title  = get_the_title();
     $url    = esc_url(get_permalink());
-    $date   = get_the_date(get_option('date_format'));
-
-    $archive_year  = get_the_time('Y');
-    $archive_month = get_the_time('m');
-    $archive_day   = get_the_time('d');
+    $dates  = get_field('dates') ? get_field('dates') : '';
 ?>
 <li>
     <div class="blog-box">
@@ -21,8 +17,8 @@
             </div>
             <div class="right-box">
                 <div class="blog-content-box">
-                    <?php if ($date) { ?>
-                        <a href="<?php echo get_day_link( $archive_year, $archive_month, $archive_day); ?>" class="blog-date" title="<?php echo esc_attr($date); ?>"><?php echo $date; ?></a>
+                    <?php if ($dates) { ?>
+                        <span class="blog-date"><?php echo $dates['start'] ? $dates['start'] : $dates['end']; ?></span>
                     <?php } ?>
                     <?php if ($title) { ?>
                         <a href="<?php echo $url; ?>" class="blog-title" title="<?php echo esc_attr($title); ?>"><?php echo $title; ?></a>
@@ -33,6 +29,13 @@
                 </div>
                 <div class="card-btn-box">
                     <a href="<?php echo $url; ?>" title="<?php esc_attr_e('Read More','pc'); ?>"><?php _e('Read More', 'pc'); ?> <span class="icon icon-long-arrow"></span></a>
+                    <?php
+                    /*
+                     <a href="#" title="Read More">Read More <span class="icon icon-long-arrow"></span></a>
+                                            <a href="#" title="Register">Register</a>
+                                            <a href="#" title="View recording">View recording</a>
+                     */
+                    ?>
                 </div>
             </div>
         </div>

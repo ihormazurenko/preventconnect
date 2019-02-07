@@ -63,7 +63,7 @@
                                         <div class="left-box">
                                             <a href="<?php echo esc_url($web_link); ?>" title="<?php echo esc_attr($web_title); ?>">
                                                 <div class="card-img-wrap">
-                                                    <?php echo get_the_post_thumbnail( $web_post_id, 'medium_large' ); ?>
+                                                    <?php echo get_the_post_thumbnail( $web_post_id, 'featured-thumb' ); ?>
                                                 </div>
                                             </a>
                                         </div>
@@ -155,7 +155,7 @@
                                         <div class="left-box">
                                             <a href="<?php echo esc_url($podcast_link); ?>" title="<?php echo esc_attr($podcast_title); ?>">
                                                 <div class="card-img-wrap">
-                                                    <?php echo get_the_post_thumbnail( $podcast_post_id, 'medium_large' ); ?>
+                                                    <?php echo get_the_post_thumbnail( $podcast_post_id, 'featured-thumb' ); ?>
                                                 </div>
                                             </a>
                                         </div>

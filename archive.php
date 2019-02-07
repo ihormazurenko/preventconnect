@@ -17,6 +17,7 @@
                 </ul>
 
             <?php
+                get_template_part('inc/pagination');
             else: echo "<div class='no-results-wrap'><p class='not-found'>".__('Sorry, no posts found...', 'pc')."</p></div>";
             endif;
             ?>

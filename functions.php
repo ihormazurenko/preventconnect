@@ -37,12 +37,11 @@ function my_custom_login_logo(){
 }
 add_action('login_head', 'my_custom_login_logo');
 
-add_filter( 'login_headerurl', create_function('', 'return get_home_url();') );
-add_filter( 'login_headertitle', create_function('', 'return false;') );
-
+add_filter( 'login_headerurl', function() { return get_home_url(); } );
+add_filter( 'login_headertitle', function() { return false; } );
 
 // no information explaining the situation will appear when an incorrect login or password is entered
-add_filter('login_errors',create_function('$a', "return null;"));
+add_filter('login_errors', function() { return null; } );
 
 
 // delete unnecessary items in wp_head
@@ -82,6 +81,12 @@ if ( function_exists( 'add_theme_support' ) ) {
     add_theme_support( 'post-thumbnails' );
 }
 
+add_image_size( 'archive-thumb', 600, 383, true ); // Hard Crop Mode
+add_image_size( 'featured-thumb', 900, 575, true ); // Hard Crop Mode
+
+// Register the three useful image sizes for use in Add Media modal
+
+
 
 // support menus
 if ( function_exists( 'register_nav_menus' ) ) {
@@ -108,25 +113,6 @@ function new_excerpt_length($length) {
 }
 add_filter('excerpt_length', 'new_excerpt_length');
 
-////for custom excerpts
-//function the_excerpt_max_charlength( $charlength ){
-//	$excerpt = get_the_excerpt();
-//	$charlength++;
-//
-//	if ( mb_strlen( $excerpt ) > $charlength ) {
-//		$subex = mb_substr( $excerpt, 0, $charlength - 5 );
-//		$exwords = explode( ' ', $subex );
-//		$excut = - ( mb_strlen( $exwords[ count( $exwords ) - 1 ] ) );
-//		if ( $excut < 0 ) {
-//			echo mb_substr( $subex, 0, $excut );
-//		} else {
-//			echo $subex;
-//		}
-//		echo '...';
-//	} else {
-//		echo $excerpt;
-//	}
-//}
 
 
 /* Hack on overwriting the guid parameter when publishing or updating a post in the admin panel (the permalink in the current structure is written)
@@ -163,3 +149,36 @@ add_action('admin_menu', 'remove_theme_editor_page', 999);
 if( function_exists('acf_add_options_page') ) {
     acf_add_options_page('Theme Options');
 }
+
+
+// for conferences date field
+function before_save_conference($post_id) {
+
+    // if revision or post autosave or insufficient editing permissions
+    if ( wp_is_post_revision($post_id) || (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) || !current_user_can( 'edit_post', $post_id ) )
+        return;
+
+    if (empty($_POST['acf']))
+        return;
+
+
+    if ( $_POST['acf']['field_5c5b4e74a0a9f']['field_5c5ae765e5e1f'] || $_POST['acf']['field_5c5b4e74a0a9f']['field_5c5b4e93a0aa0'] ) :
+        $start  = $_POST['acf']['field_5c5b4e74a0a9f']['field_5c5ae765e5e1f'] ? strtotime($_POST['acf']['field_5c5b4e74a0a9f']['field_5c5ae765e5e1f']) : '';
+
+        if ( $_POST['acf']['field_5c5b4e74a0a9f']['field_5c5b4e93a0aa0'] ) {
+            $end = strtotime($_POST['acf']['field_5c5b4e74a0a9f']['field_5c5b4e93a0aa0']);
+        } elseif ( $_POST['acf']['field_5c5b4e74a0a9f']['field_5c5ae765e5e1f'] ) {
+            $end = strtotime($_POST['acf']['field_5c5b4e74a0a9f']['field_5c5ae765e5e1f']);
+        }
+        $end = $end ? $end+86400 : '';
+
+        // file_put_contents(get_theme_file_path().'/test.txt', $end);
+        // delete_post_meta($post_id, 'percentage');
+        update_post_meta($post_id, 'dates_start_U', $start);
+        update_post_meta($post_id, 'dates_end_U', $end);
+    endif;
+
+    return $post_id;
+
+}
+add_action('save_post', 'before_save_conference', -1);

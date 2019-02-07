@@ -13,7 +13,7 @@
 
             <?php endwhile; else: endif; ?>
 
-        </div><!--/content-->
+        </div>
 
         <?php get_sidebar(); ?>
 
