@@ -16,6 +16,14 @@ function load_style_script(){
 add_action('wp_enqueue_scripts', 'load_style_script');
 
 
+add_action( 'admin_enqueue_scripts', 'load_custom_wp_admin_style' );
+function load_custom_wp_admin_style() {
+    
+    wp_enqueue_script( 'custom_wp_admin_js', get_stylesheet_directory_uri() . '/assets/js/custom/custom_wp_admin_scripts.js', array( 'jquery' ) );
+    
+   
+}
+
 
 // add ie conditional html5 shiv to header
 function add_ie_html5_shiv () {
@@ -118,7 +126,8 @@ add_filter('excerpt_length', 'new_excerpt_length');
 /* Hack on overwriting the guid parameter when publishing or updating a post in the admin panel (the permalink in the current structure is written)
 --------------------------------------------------------------------------------------------------------------------------------- */
 function guid_write( $id ){
-    if ( defined('DOING_AUTOSAVE') && DOING_AUTOSAVE  ) return false; // если это автосохранение
+    if ( defined('DOING_AUTOSAVE') && DOING_AUTOSAVE  )
+        return false;
 
     global $wpdb;
 

@@ -66,7 +66,7 @@
                                         <span class="btn-table">
                                             <span class="btn-cell">
                                                <span class="icon icon-conference"></span>
-                                                <?php _e('All Web Conferences', 'pc'); ?>
+                                                <?php _e('All podcast Conferences', 'pc'); ?>
                                             </span>
                                         </span>
                                     </a>

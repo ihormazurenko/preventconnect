@@ -1,8 +1,7 @@
 <?php
  $social_links = get_field('social_links', 'option');
-
-
 ?>
+
 <form action="" class="subscribe-form">
 	<ul class="form-list">
 		<li>

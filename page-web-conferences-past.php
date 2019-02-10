@@ -28,11 +28,16 @@ get_header();
                     'orderby'       => array( 'meta_value_num' => 'DESC' ),
                     'paged'         => $paged,
                     'meta_query'    => array(
+                        'relation' => 'OR',
                         array(
                             'key'       => 'dates_end_U',
                             'value'     => $currentTime,
                             'compare'   => '<',
                             'type'      => 'NUMERIC'
+                        ),
+                        array(
+                            'key'       => 'dates_end_U',
+                            'compare'   => 'NOT EXISTS'
                         )
                     )
                 );
@@ -50,7 +55,7 @@ get_header();
                     get_template_part('inc/pagination');
 
                 } else {
-                    echo '<p class="no-results">' . __('Sorry, web conferences not found...', 'pc') . '</p>';
+                    echo '<p class="no-results">' . __('Sorry, no web conferences found...', 'pc') . '</p>';
                 }
 
                 wp_reset_query();

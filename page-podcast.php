@@ -40,7 +40,7 @@ get_header(); ?>
                     get_template_part('inc/pagination');
 
                 } else {
-                    echo '<p class="no-results">' . __('Sorry, articles not found...', 'pc') . '</p>';
+                    echo '<p class="no-results">' . __('Sorry, no podcasts found...', 'pc') . '</p>';
                 }
 
                 wp_reset_query();

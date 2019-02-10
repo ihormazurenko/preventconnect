@@ -7,7 +7,7 @@ get_header(); ?>
     <section class="section section-blog">
         <div class="container">
             <div class="section-title-box">
-                <h1 class="section-title small"><?php echo get_the_title() ;?></h1>
+                <h1 class="section-title small"><?php the_title() ;?></h1>
             </div>
 
             <?php
@@ -36,7 +36,7 @@ get_header(); ?>
                     get_template_part('inc/pagination');
 
                 } else {
-                    echo '<p class="no-results">' . __('Sorry, articles not found...', 'pc') . '</p>';
+                    echo '<p class="no-results">' . __('Sorry, no articles found...', 'pc') . '</p>';
                 }
 
                 wp_reset_query();

@@ -50,7 +50,7 @@ get_header();
                     get_template_part('inc/pagination');
 
                 } else {
-                    echo '<p class="no-results">' . __('Sorry, web conferences not found...', 'pc') . '</p>';
+                    echo '<p class="no-results">' . __('Sorry, no web conferences found...', 'pc') . '</p>';
                 }
 
                 wp_reset_query();

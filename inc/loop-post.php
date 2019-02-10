@@ -10,19 +10,22 @@
 <li>
     <div class="blog-box">
         <div class="inner-box">
-            <div class="left-box">
-                <a href="<?php echo esc_url($url); ?>" title="<?php echo esc_attr($title); ?>">
-                    <div class="centered-img">
-                        <?php the_post_thumbnail('archive-thumb', array(
-                            'alt' => esc_attr($title)
-                        )); ?>
-                    </div>
-                </a>
-            </div>
+            <?php if( has_post_thumbnail() ) { ?>
+                <div class="left-box">
+                    <a href="<?php echo esc_url($url); ?>" title="<?php echo esc_attr($title); ?>">
+                        <div class="centered-img">
+                            <?php the_post_thumbnail('archive-thumb', array(
+                                'alt' => esc_attr($title)
+                            )); ?>
+                        </div>
+                    </a>
+                </div>
+            <?php } ?>
             <div class="right-box">
                 <div class="blog-content-box">
                     <?php if ($date) { ?>
-                        <a href="<?php echo get_day_link( $archive_year, $archive_month, $archive_day); ?>" class="blog-date" title="<?php echo esc_attr($date); ?>"><?php echo $date; ?></a>
+                        <span class="blog-date"><?php echo $date; ?></span>
+                        <?php /* <a href="<?php echo get_day_link( $archive_year, $archive_month, $archive_day); ?>" class="blog-date" title="<?php echo esc_attr($date); ?>"><?php echo $date; ?></a> */ ?>
                     <?php } ?>
                     <?php if ($title) { ?>
                         <a href="<?php echo $url; ?>" class="blog-title" title="<?php echo esc_attr($title); ?>"><?php echo $title; ?></a>

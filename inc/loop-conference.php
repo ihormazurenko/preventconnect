@@ -2,23 +2,30 @@
     $title  = get_the_title();
     $url    = esc_url(get_permalink());
     $dates  = get_field('dates') ? get_field('dates') : '';
+    if ($dates) {
+        $date = $dates['start'] ? $dates['start'] : $dates['end'];
+    } else {
+        $date = get_the_date(get_option('date_format'));
+    }
 ?>
 <li>
     <div class="blog-box">
         <div class="inner-box">
-            <div class="left-box">
-                <a href="<?php echo esc_url($url); ?>" title="<?php echo esc_attr($title); ?>">
-                    <div class="centered-img">
-                        <?php the_post_thumbnail('archive-thumb', array(
-                            'alt' => esc_attr($title)
-                        )); ?>
-                    </div>
-                </a>
-            </div>
+            <?php if( has_post_thumbnail() ) { ?>
+                <div class="left-box">
+                    <a href="<?php echo esc_url($url); ?>" title="<?php echo esc_attr($title); ?>">
+                        <div class="centered-img">
+                            <?php the_post_thumbnail('archive-thumb', array(
+                                'alt' => esc_attr($title)
+                            )); ?>
+                        </div>
+                    </a>
+                </div>
+            <?php } ?>
             <div class="right-box">
                 <div class="blog-content-box">
-                    <?php if ($dates) { ?>
-                        <span class="blog-date"><?php echo $dates['start'] ? $dates['start'] : $dates['end']; ?></span>
+                    <?php if ($date) { ?>
+                        <span class="blog-date"><?php echo $date; ?></span>
                     <?php } ?>
                     <?php if ($title) { ?>
                         <a href="<?php echo $url; ?>" class="blog-title" title="<?php echo esc_attr($title); ?>"><?php echo $title; ?></a>
