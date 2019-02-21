@@ -32,7 +32,7 @@ get_header(); ?>
                     echo '<ul class="blog-list">';
                     while ( $new_query->have_posts() ) : $new_query->the_post();
 
-                        get_template_part('inc/loop', 'post');
+                        get_template_part('inc/loop', 'podcast');
 
                     endwhile;
                     echo "</ul>";

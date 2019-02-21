@@ -129,7 +129,7 @@
                                             </div>
 
                                             <div class="card-btn-box">
-                                                <a href="<?php echo $link; ?>" title="<?php esc_attr_e('Read More', 'pc'); ?>"> <?php _e('Read More', 'pc'); ?> <span class="icon icon-long-arrow"></span></a>
+                                                <a href="<?php echo $link; ?>" title="<?php esc_attr_e('Listen', 'pc'); ?>"> <?php _e('Listen', 'pc'); ?> <span class="icon icon-long-arrow"></span></a>
                                             </div>
                                         </div>
                                     </div>

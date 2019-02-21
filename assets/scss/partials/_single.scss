@@ -12,14 +12,21 @@
       padding: 30px 20px 50px;
     }
   }
-  .section-title,
-  .section-title.small {
-    margin-bottom: 50px;
-    @media all and (max-width: 1024px) {
+  .single & {
+    .section-title,
+    .section-title.small {
       margin-bottom: 40px;
+      padding-bottom: 30px;
+      text-align: left;
+      @media all and (max-width: 1024px) {
+        margin-bottom: 40px;
+      }
+      @media all and (max-width: 767px) {
+        margin-bottom: 30px;
+      }
     }
-    @media all and (max-width: 767px) {
-      margin-bottom: 30px;
-    }
+  }
+  .single-post-detail {
+    margin-bottom: 5px;
   }
 }

@@ -206,7 +206,7 @@
   margin: 0 auto;
   //padding-bottom: 60px;
   padding: 0 25px 60px;
-  .subscribe-form {
+  .subscribe-form-box {
     margin-bottom: 20px;
   }
   .social-box {
@@ -216,4 +216,8 @@
   > * {
     //margin: 0 25px 25px;
   }
+}
+#header-main .mobile-form-group div.ctct-form-embed form.ctct-form-custom,
+#header-scrolling .mobile-form-group div.ctct-form-embed form.ctct-form-custom {
+  margin-bottom: 25px;
 }

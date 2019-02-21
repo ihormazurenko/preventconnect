@@ -24,7 +24,9 @@
             <div class="right-box">
                 <div class="blog-content-box">
                     <?php if ($date) { ?>
-                        <span class="blog-date"><?php echo $date; ?></span>
+                        <div class="single-post-detail">
+                            <span class="blog-date"><?php echo $date; ?></span>
+                        </div>
                         <?php /* <a href="<?php echo get_day_link( $archive_year, $archive_month, $archive_day); ?>" class="blog-date" title="<?php echo esc_attr($date); ?>"><?php echo $date; ?></a> */ ?>
                     <?php } ?>
                     <?php if ($title) { ?>

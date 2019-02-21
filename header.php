@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <?php wp_head(); ?>
+
+    <script> var _ctct_m = "969daaf2a8d7a815656056fe8506a375"; </script>
 </head>
 
 <body <?php body_class(); ?>>

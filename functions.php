@@ -11,6 +11,8 @@ function load_style_script(){
         wp_enqueue_script( 'jquery', '//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js', array(), '1.12.4', false  );
     }
     wp_enqueue_script('smooth-scroll.polyfills', '//cdnjs.cloudflare.com/ajax/libs/smooth-scroll/15.1.0/smooth-scroll.polyfills.min.js', array(), '15.1.0', true );
+    wp_enqueue_script('signup-form-widget', '//static.ctctcdn.com/js/signup-form-widget/current/signup-form-widget.min.js', array('jquery'), null, true );
+    wp_enqueue_script('magnific', get_template_directory_uri() . '/assets/js/magnific.js', array(), '1.1.0', true );
     wp_enqueue_script('custom-scripts', get_template_directory_uri() . '/assets/js/custom/scripts.js', array('jquery'), null, true );
 }
 add_action('wp_enqueue_scripts', 'load_style_script');

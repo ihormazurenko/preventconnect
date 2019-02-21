@@ -275,6 +275,150 @@
 
         scrollEffects();
 
+        //for popup
+        if (typeof $.fn.magnificPopup !== 'undefined') {
+            if ($('.constant-popup-form').length) {
+                $('.constant-popup-form').magnificPopup({
+                    type: 'inline',
+                    mainClass: 'mfp-fade',
+                    removalDelay: 350,
+                    preloader: false,
+                    fixedContentPos: true,
+                    fixedBgPos: true,
+                    callbacks: {
+                        beforeClose: function () {
+                            if ($('.subscribe-form').length) {
+                                var form = $('.subscribe-form');
+
+                                form.each(function () {
+                                    $(this).find('input[type="email"]').val('');
+                                });
+                            }
+                        }
+                    }
+                });
+            }
+        }
+
+        //for subscribe form
+        $(function () {
+
+
+            // var count = 0;
+            // function checkForm() {
+            //     if ($('#ctct_form_0').length) {
+            //         var form = $('#ctct_form_0'),
+            //             inputEmail = $('input#email_address_0'),
+            //             inputList = $('input#email_list_1_0');
+            //
+            //         if ( count == 30 ) {
+            //             stopInterval();
+            //         }
+            //
+            //         if (inputList.prop('checked') == true) {
+            //             console.log('ok');
+            //             inputEmail.attr('placeholder', 'Join our mailing list');
+            //             stopInterval();
+            //             submitForm();
+            //         } else {
+            //             console.log('uncheck');
+            //             inputList.prop('checked', true);
+            //         }
+            //     }
+            // }
+            //
+            // var checker = setInterval(checkForm, 500);
+            // // var checkStatus = setInterval(checkStatusForm, 500);
+            //
+            //
+            // function stopInterval() {
+            //     clearInterval(checker);
+            //     console.log('stop');
+            // }
+
+            // function stopStatusInterval() {
+            //     clearInterval(checkStatus);
+            //     console.log('stop');
+            // }
+
+            //for my form
+            // function submitForm() {
+                if ($('.subscribe-form').length) {
+                    $('.subscribe-form').on('submit',function (e) {
+                        e.preventDefault();
+
+                        var form         =  $(this),
+                            // parentBox    = form.parents('.subscribe-form-box'),
+                            // btn          = form.find('.btn'),
+                            popupBtn     = form.find('.constant-popup-form'),
+                            emailVal     = form.find('input[type="email"]').val();
+
+
+                        var constantForm       = $('#ctct_form_0'),
+                            constantEmailField = constantForm.find('input[type="email"]');
+                        //     constantSuccessBox = $('#success_message_0');
+                        //
+                        //     form.fadeOut(0);
+                            constantEmailField.val(emailVal);
+                            setTimeout(function () {
+                                popupBtn.click();
+                                // ajaxIcon.css('visibility','visible');
+                                // console.log(emailVal);
+                                //
+                                // constantEmailField.val(emailVal);
+                                // constantForm.submit();
+
+                            },100);
+
+                        // console.log('prevent');
+                    });
+
+                    $('.subscribe-form input[type="email"]').on('click change',function (e) {
+                        // e.preventDefault();
+
+                        var form         =  $(this).parents('.subscribe-form'),
+                            // parentBox    = form.parents('.subscribe-form-box'),
+                            // btn          = form.find('.btn'),
+                            popupBtn     = form.find('.constant-popup-form'),
+                            emailVal     = form.find('input[type="email"]').val();
+
+
+                        var constantForm       = $('#ctct_form_0'),
+                            constantEmailField = constantForm.find('input[type="email"]');
+                        //     constantSuccessBox = $('#success_message_0');
+                        //
+                        //     form.fadeOut(0);
+                        constantEmailField.val(emailVal);
+                        setTimeout(function () {
+                            popupBtn.click();
+                            // ajaxIcon.css('visibility','visible');
+                            // console.log(emailVal);
+                            //
+                            // constantEmailField.val(emailVal);
+                            // constantForm.submit();
+
+                        },100);
+
+                       //console.log('click');
+                    });
+                }
+            // }
+
+            // var countStatus = 0;
+            // function checkStatusForm() {
+            //     var constantForm       = $('#ctct_form_0'),
+            //         constantSuccessBox = $('#success_message_0');
+            //
+            //    //console.log(countStatus);
+            //     if (constantSuccessBox.css('display') == 'none') {
+            //         countStatus++;
+            //     } else {
+            //         stopStatusInterval();
+            //        //console.log('stop status');
+            //     }
+            // }
+            // submitForm();
+        });
     });
 
 });

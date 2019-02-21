@@ -1,7 +1,9 @@
+//#email_address_0,
 .input-style {
   display: block;
   width: 100%;
   min-height: 30px;
+  height: auto;
   margin: 0;
   padding: 4px 10px 5px;
   @include font($normal, $size-main, $font-main, 1);
@@ -35,13 +37,14 @@
 //  @include border-radius(0);
 //}
 //
+//input#email_address_0::-webkit-input-placeholder,
 input::-webkit-input-placeholder {
   font-family: $font-main;
   font-weight: $normal;
   color: $color-light-grey2;
     @include transition($transition-other)
 }
-
+//input#email_address_0::-moz-placeholder,
 input::-moz-placeholder {
   font-family: $font-main;
   font-weight: $normal;
@@ -55,7 +58,7 @@ input:-ms-input-placeholder {
   color: $color-light-grey2;
   @include transition($transition-other)
 }
-
+//input#email_address_0:-moz-placeholder,
 input:-moz-placeholder {
   font-family: $font-main;
   font-weight: $normal;
@@ -198,5 +201,134 @@ textarea:-moz-placeholder {
   a.btn,
   .btn {
     display: block;
+  }
+}
+.subscribe-form-box {
+  text-align: center;
+  .ajax-loader {
+    visibility: hidden;
+    display: inline-block;
+    background-image: url(../../img/ajax-loader.gif);
+    width: 16px;
+    height: 16px;
+    border: none;
+    padding: 0;
+    margin: 0 0 0 4px;
+    vertical-align: middle;
+  }
+}
+//
+//#header-main,
+//#header-scrolling {
+//  div.ctct-form-embed div.ctct-form-defaults {
+//    padding: 0;
+//  }
+//  .ctct-form-header {
+//    margin-bottom: 0;
+//    font-size: 18px;
+//    color: $color-green;
+//  }
+//  #success_message_0 {
+//    min-height: initial;
+//  }
+//}
+//
+//#header-main div.ctct-form-embed form.ctct-form-custom,
+//#header-scrolling div.ctct-form-embed form.ctct-form-custom {
+//  overflow: hidden;
+//  min-height: initial;
+//    #email_address_field_0 {
+//    position: relative;
+//    display: block;
+//    float: left;
+//    vertical-align: top;
+//    max-width: -webkit-calc(100% - #{80px});
+//    max-width: calc(100% - #{80px});
+//    width: 100%;
+//    padding-right: 10px;
+//    margin: 0;
+//  }
+//  a.ctct-form-button,
+//  button.ctct-form-button,
+//  .ctct-form-button {
+//    float: left;
+//    position: relative;
+//    display: block;
+//    max-width: 100%;
+//    min-width: 70px;
+//    width: 80px;
+//    margin: 0;
+//    padding: 8px 20px;
+//    font-size: 12px;
+//    font-weight: $normal;
+//    line-height: 1;
+//    color: $white;
+//    text-align: center;
+//    cursor: pointer;
+//    text-decoration: none;
+//    border: 1px solid $color-blue;
+//    background-color: $color-blue;
+//    @include border-radius($radius-small);
+//    @media all and (min-width: 769px) {
+//      &:hover,
+//      &:focus {
+//        color: $color-blue;
+//        background-color: transparent;
+//      }
+//    }
+//  }
+//  .ctct-form-errorMessage{
+//    position: absolute;
+//    bottom: -30px;
+//    left: 0;
+//  }
+//}
+//
+//#ctct_recaptcha_0,
+//#list_memberships_field_0,
+//#email_address_label_0,
+//.ctct-form-footer,
+//.ctct-form-label,
+//.ctct-form-text,
+//.ctct-gdpr-text {
+//  display: none;
+//}
+#ctct_recaptcha_0 {
+  display: none;
+}
+
+body div.ctct-form-embed {
+  div.ctct-form-defaults {
+    @media all and (max-width: 640px) {
+      padding: 0;
+    }
+    p.ctct-form-footer {
+      display: none;
+    }
+    div.ctct-form-success {
+      text-align: center;
+    }
+  }
+  form.ctct-form-custom {
+    button.ctct-form-button {
+      position: relative;
+      &:after {
+        visibility: hidden;
+        position: absolute;
+        content: '';
+        display: block;
+        left: 50%;
+        bottom: -25px;
+        background-image: url(../../img/ajax-loader.gif);
+        width: 16px;
+        height: 16px;
+        @include translate(-50%, 0);
+      }
+      &:disabled {
+        &:after {
+          visibility: visible;
+        }
+      }
+    }
   }
 }

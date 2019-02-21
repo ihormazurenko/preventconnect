@@ -1,29 +1,12 @@
 <?php
     $title  = get_the_title();
     $url    = esc_url(get_permalink());
-    $dates  = get_field('dates') ? get_field('dates') : '';
+    $date   = get_the_date(get_option('date_format'));
 
-    $currentTime = date('U');
-    $dates_end_U = get_post_meta( get_the_ID() , 'dates_end_U', true );
-
-
-    if ($dates) {
-        $date = $dates['start'] ? $dates['start'] : $dates['end'];
-    } else {
-        $date = get_the_date(get_option('date_format'));
-    }
-
-
-    $links_group    = get_field('links');
-    if ($links_group && is_array($links_group) && count($links_group) > 0) {
-        $register = ( $links_group['register'] && trim($links_group['register_url']) && $dates_end_U >= $currentTime ) ?
-            '<a href="'.esc_url($links_group['register_url']).'" title="'.esc_attr__('Register', 'pc').'" target="_blank" rel="nofollow noopener">'.__('Register', 'pc').'</a>' : '';
-
-        $view_recording = ( $links_group['view_recording'] && ($dates_end_U < $currentTime || $dates_end_U == NULL) ) ?
-            '<a href="'.$url.'" title="'.esc_attr__('View Recording', 'pc').'">'.__('View Recording', 'pc').'</a>' : '';
-    }
+    $archive_year  = get_the_time('Y');
+    $archive_month = get_the_time('m');
+    $archive_day   = get_the_time('d');
 ?>
-
 <li>
     <div class="blog-box">
         <div class="inner-box">
@@ -44,6 +27,7 @@
                         <div class="single-post-detail">
                             <span class="blog-date"><?php echo $date; ?></span>
                         </div>
+                        <?php /* <a href="<?php echo get_day_link( $archive_year, $archive_month, $archive_day); ?>" class="blog-date" title="<?php echo esc_attr($date); ?>"><?php echo $date; ?></a> */ ?>
                     <?php } ?>
                     <?php if ($title) { ?>
                         <a href="<?php echo $url; ?>" class="blog-title" title="<?php echo esc_attr($title); ?>"><?php echo $title; ?></a>
@@ -53,11 +37,7 @@
                     </div>
                 </div>
                 <div class="card-btn-box">
-                    <a href="<?php echo $url; ?>" title="<?php esc_attr_e('Read More','pc'); ?>"><?php _e('Read More', 'pc'); ?> <span class="icon icon-long-arrow"></span></a>
-                    <?php
-                        echo $register; // logic of outputting at the top of this php file
-                        echo $view_recording; // logic of outputting at the top of this php file
-                    ?>
+                    <a href="<?php echo $url; ?>" title="<?php esc_attr_e('Listen','pc'); ?>"><?php _e('Listen', 'pc'); ?> <span class="icon icon-long-arrow"></span></a>
                 </div>
             </div>
         </div>
